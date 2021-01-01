@@ -136,7 +136,7 @@
         Thanks for <a href="https://github.com/tomas789/kitti2bag" target="_blank">kitti2bag</a>!</p>
         <p>Here we need python2 and many packages following:</p>
         
-        <pre><code>$ pip install pykitti kitti2bag</code></pre>
+        <pre><code>pip install pykitti kitti2bag</code></pre>
         <p>Here we use "<b>synced+rectified</b>" which refers to the processed data where images have been <b>rectified</b> and <b>undistorted</b> and where the data frame numbers correspond across all sensor streams.</p>
 
         <p>So get a set of raw data from <a href="http://www.cvlibs.net/datasets/kitti/raw_data.php" target="_blank">here</a> (ex: 2011_09_26_drive_0001 [synced+rectified data] [calibration]) and then unzip it.</p>
@@ -144,34 +144,34 @@
         <p>Or just simple:</p>
 
         <pre>
-        <code>$ wget https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0001/2011_09_26_drive_0001_sync.zip
-        $ wget https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_calib.zip
-        $ unzip 2011_09_26_drive_0001_sync.zip
-        $ unzip 2011_09_26_calib.zip</code></pre>
+<code>wget https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_drive_0001/2011_09_26_drive_0001_sync.zip
+wget https://s3.eu-central-1.amazonaws.com/avg-kitti/raw_data/2011_09_26_calib.zip
+unzip 2011_09_26_drive_0001_sync.zip
+unzip 2011_09_26_calib.zip</code></pre>
         <p>Then we have a raw data folder like this:</p>
 
         <pre>
-        <code>2011_09_26/
-        └── 2011_09_26_drive_0001_sync/
-            ├── image_00/
-            │   └── data/
-            ├── image_01/
-            │   └── data/
-            ├── image_02/
-            │   └── data/
-            ├── image_03/
-            │   └── data/
-            ├── oxts/
-            │   └── data/
-            └── velodyne_points/
-                └── data/
-        └── calib_cam_to_cam.txt    
-        └── calib_imu_to_velo.txt
-        └── calib_velo_to_cam.txt</code></pre>
+<code>2011_09_26/
+└── 2011_09_26_drive_0001_sync/
+    ├── image_00/
+    │   └── data/
+    ├── image_01/
+    │   └── data/
+    ├── image_02/
+    │   └── data/
+    ├── image_03/
+    │   └── data/
+    ├── oxts/
+    │   └── data/
+    └── velodyne_points/
+        └── data/
+└── calib_cam_to_cam.txt    
+└── calib_imu_to_velo.txt
+└── calib_velo_to_cam.txt</code></pre>
 
         <p>Run this command for create the .bag file</p>
 
-        <pre><code>$ kitti2bag -t 2011_09_26 -r 0001 raw_synced .</code></pre>
+        <pre><code>kitti2bag -t 2011_09_26 -r 0001 raw_synced .</code></pre>
 
         <p>Then we have a .bag file like this kitti_2011_09_26_drive_0001_synced.bag.</p>
 

@@ -141,11 +141,11 @@
         <ol>
           <li>Fist of all, we need a .bag file for working with ROS. So, we can convert your KITTI raw data to a ROS .bag file from <a href="./kitti2bag.html">here</a>. And then we have a .bag file like this kitti_2011_09_26_drive_0001_synced.bag.</li>
           <li>Start your ROS master node by running the following command:</li>
-          <pre><code>$ roscore</code></pre>
+          <pre><code>roscore</code></pre>
           <li>Open a 2nd terminal and run the this command to playback the ROS .bag file containing the downloaded dataset.</li>
-          <pre><code>$ rosbag play kitti_2011_09_26_drive_0001_synced.bag</code></pre>
+          <pre><code>rosbag play kitti_2011_09_26_drive_0001_synced.bag</code></pre>
           <li>Open a 3rd terminal and open ROS's visualization tool rViz with a flag setting the frame to velodyne by this command:</li>
-          <pre><code>$ rosrun rviz rviz -f velodyne</code></pre>
+          <pre><code>rosrun rviz rviz -f velodyne</code></pre>
           <li>Inside the rViz application, click ADD and navigate to BY TOPIC. Then select /kitti/velo/pointcloud/PointCloud2.</li>
           <img src="../imgs/blog/rviz_kitti_add.png">
           <li>Repeat step 5 for /camera_color_left, /camera_color_right, /camera_gray_left, /camera_gray_right.</li>
