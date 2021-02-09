@@ -7175,6 +7175,14 @@ button.close {
     content: "\f082"
 }
 
+.fa-star{
+    content: "\f005"
+}
+
+.fa-star-o{
+    content: "\f006"
+}
+
 .fa-camera-retro:before {
     content: "\f083"
 }
@@ -9155,23 +9163,27 @@ a:focus, a:active:focus, a.active:focus, button:focus, button:active:focus, butt
 
 .experience-item .stay-time {
     color: #FFF;
-    font-size: 16px;
+    /*font-size: 16px;*/
     font-weight: 400;
     text-transform: uppercase;
-    padding-top: 25px;
-    width: 145px;
-    height: 145px;
+    padding-top: 16px;
+    width: 100px;/*145px;*/
+    height: 100px; /*145px;*/
     border-radius: 50%;
     text-align: center;
     border: 10px solid #f1f2f7;
     position: absolute;
-    top: -8px;
-    left: 30%
+    top: -8px;/*-8px;*/
+    left: 30%;/*30%*/
+    /*margin-left: -50px*/
+
 }
 
 .experience-item:hover .stay-time {
-    border: 15px solid #f1f2f7;
-    padding-top: 20px;
+/*    border: 15px solid #f1f2f7;
+    padding-top: 20px;*/
+    border: 5px solid #f1f2f7;
+    padding-top: 21px;
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
@@ -9323,8 +9335,11 @@ a:focus, a:active:focus, a.active:focus, button:focus, button:active:focus, butt
     position: absolute;
     top: -50px;
     left: 50%;
-    margin-left: -50px
+
 }
+
+
+
 
 .horizontal:hover .edu-time {
     border: 5px solid #f1f2f7;
