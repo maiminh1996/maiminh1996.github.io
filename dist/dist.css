@@ -7251,6 +7251,10 @@ button.close {
     content: "\f095"
 }
 
+.fa-linkedin-square:before {
+    content: "\f08c"
+}
+
 .fa-square-o:before {
     content: "\f096"
 }
