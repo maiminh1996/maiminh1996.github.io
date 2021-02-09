@@ -1,1 +1,1 @@
-My personal web site [https://maiminh1996.github.io/](https://maiminh1996.github.io/)
+My personal web [http://maiminh1996.com/](maiminh1996.com)
