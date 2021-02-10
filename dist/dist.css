@@ -8981,7 +8981,7 @@ a:focus, a:active:focus, a.active:focus, button:focus, button:active:focus, butt
     display: block;
     width: 36px;
     height: 36px;
-    color: #a6dbd1;
+    color: #fff; /*#a6dbd1;*//*modif*/
     border: 1px solid #FFF;
     border-radius: 50%;
     text-align: center;
