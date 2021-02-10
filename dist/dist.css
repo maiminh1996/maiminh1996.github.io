@@ -27,6 +27,8 @@ kbd1 {
 
 
 
+
+
 html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
@@ -8562,7 +8564,7 @@ a:focus, a:active:focus, a.active:focus, button:focus, button:active:focus, butt
 }
 
 .section-heading {
-    background: #c2e0db;
+    background: #87CEEB; /*#c2e0db;*//*modif*/ 
     box-shadow: 0 3px 3px 0 rgba( 1, 2, 2, 0.05);
     padding: 30px 0;
     margin-bottom: 40px
