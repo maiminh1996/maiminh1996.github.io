@@ -1614,7 +1614,7 @@ pre code {
 
 @media (min-width:1200px) {
     .container {
-        width: 1170px
+        width: 870px
     }
 }
 
@@ -8612,7 +8612,7 @@ a:focus, a:active:focus, a.active:focus, button:focus, button:active:focus, butt
 }
 
 .title {
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 400;
     text-transform: uppercase;
     color: #32323a;
