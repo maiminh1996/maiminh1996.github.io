@@ -11,6 +11,41 @@
  */
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box
+}
+.item_description {
+  width:100%;
+}
+.image {
+  /*height:0;
+  padding-bottom:40%;
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center center;*/
+  position:relative;
+  /*width:40%;*/
+}
+.desc, .image {
+  float:left;
+  display:block
+}
+.desc {
+  width:67%;
+  text-align:left;
+  padding:5px;
+}
+
+@media (max-width:800px) {
+  .desc, .image {
+    float:none;
+    width:100%;
+  }
+}
+
 kbd1 {
     /*background-color: #eee;*/
     border-radius: 3px;
@@ -1594,6 +1629,7 @@ pre code {
 }
 
 .container {
+    padding-top: 15px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
