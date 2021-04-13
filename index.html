@@ -17,10 +17,30 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+<!--https://stackoverflow.com/questions/16751345/automatically-close-all-the-other-details-tags-after-opening-a-specific-detai/56194608
+<script language="javascript">alert("Chào mừng bạn đến với Hocban.vn");</script>-->
+<script language="javascript">
+
+const All_Details = document.querySelectorAll('details');
+
+All_Details.forEach(deet=>{
+  deet.addEventListener('toggle', toggleOpenOneOnly)
+})
+
+function toggleOpenOneOnly(e) {
+  if (this.open) {
+    All_Details.forEach(deet=>{
+      if (deet!=this && deet.open) deet.open = false
+    });
+  }
+}
+</script>
+
+
+
 </head>
 
 <body class="homepage ver-one" data-spy="scroll" data-target=".main-navigation">
-
     <!-- /#site-header -->
     <section id="about" class="default-section" data-scroll-reveal="enter from the bottom over .5s">
         <!-- /.section-heading -->
@@ -96,13 +116,11 @@ The ability to accurately detect and localize objects is recognized as being the
 
 <details style="display:inline;">
   <summary><kbd1>BibTeX</kbd1></summary>
-<pre><code>
-@article{mai2021sparse,
+<pre><code>@article{mai2021sparse,
   title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimationand 3D Object Detection},
   author={Mai, Nguyen Anh Minh and Duthon, Pierre and Khoudour, Louahdi and Crouzil, Alain and Velastin, Sergio A},
   journal={arXiv preprint arXiv:2103.03977},
-  year={2021}
-}
+  year={2021}}
 </code></pre>
 </details> 
 </span>
