@@ -32,10 +32,6 @@ $\rightarrow$ Solution: add a lens to replace the aperture! Lens: an optical ele
 
 ### Thin lens model
 
-
-
-https://stanfordasl.github.io/aa274a/pdfs/lecture/lecture_7.pdf
-
 ## Perspective projection
 
 
@@ -90,7 +86,7 @@ f\frac{Y_{C}}{Z_{C}}
 $$
 
 ### 3 Project the point in the image plane into a pixel in pixel coord
-> Goal: Projecting $p(x, y)$ (image plane) $\rightarrow$ $(u, v)$ (pixel coord)
+> Goal: Projecting $p(x, y)$ (image plane) $\rightarrow$ p$(u, v)$ (pixel coord)
 
 Actual origin of the camera coordinate system is usually at a corner (e.g., top left, bottom left)
 
@@ -106,7 +102,7 @@ f\frac{Y_{C}}{Z_{C}} + \widetilde{y}_{0}
 \end{pmatrix}
 $$
 
-Converting from image coordinates ($\widetilde{x}, \widetilde{x}$) to pixel coordinates $(u, v)$
+Converting from image coordinates ($\widetilde{x}, \widetilde{y}$) to pixel coordinates $(u, v)$
 
 $$
 \begin{pmatrix}
@@ -123,46 +119,184 @@ k_{x}\widetilde{y}
 k_{x}f\frac{X_{C}}{Z_{C}} + k_{x}\widetilde{x}_{0}\\
 k_{y}f\frac{Y_{C}}{Z_{C}} + k_{y}\widetilde{y}_{0} 
 \end{pmatrix}
+\\
+\begin{pmatrix}
+u\\
+v
+\end{pmatrix}
 =
 \begin{pmatrix}
 \alpha \frac{X_{C}}{Z_{C}} + u_{0}\\
-\beta f\frac{Y_{C}}{Z_{C}} + v_{0} 
-\end{pmatrix}
+\beta \frac{Y_{C}}{Z_{C}} + v_{0} 
+\end{pmatrix} (\textbf{\text{Nonlinear transformation}})
 $$
 
 where $k_{x}$ and $k_{y}$ be the number of pixels per unit distance in image coordinates in the x and y directions, respectively. 
 
+#### Homogeneous coordinates
+
+Inhomogenous $\rightarrow$ homogeneous
+
+$$
+\begin{pmatrix}
+x\\ 
+y
+\end{pmatrix}
+\Rightarrow 
+\lambda 
+\begin{pmatrix}
+x\\ 
+y\\
+1
+\end{pmatrix}, 
+\begin{pmatrix}
+x\\ 
+y\\
+z
+\end{pmatrix}
+\Rightarrow 
+\lambda 
+\begin{pmatrix}
+x\\ 
+y\\
+z\\
+1
+\end{pmatrix}
+$$
+
+Homogenous $\rightarrow$ inhomogeneous
+
+$$
+\begin{pmatrix}
+x\\ 
+y\\
+w
+\end{pmatrix}
+\Rightarrow 
+\lambda 
+\begin{pmatrix}
+x/w\\ 
+y/w\\
+\end{pmatrix}, 
+\begin{pmatrix}
+x\\ 
+y\\
+z\\
+w
+\end{pmatrix}
+\Rightarrow 
+\lambda 
+\begin{pmatrix}
+x/w\\ 
+y/w\\
+z/w
+\end{pmatrix} 
+$$
+
+#### Perspective projection in homogeneous coordinates
+we have
+
+$$
+\begin{bmatrix}
+\alpha  &0  & u_{0} & 0\\ 
+0 & \beta  & v_{0} &0 \\ 
+0 & 0 & 1 & 0
+\end{bmatrix}
+\begin{pmatrix}
+X_{C}\\ 
+Y_{C}\\ 
+Z_{C}\\ 
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha X_{C} + u_{0}Z_{C}\\ 
+\beta Y_{C} + v_{0}Z_{C}\\ 
+Z_{C}
+\end{pmatrix}
+$$
+
+In homogeneous coordinates, the mapping is linear: 
+
+$$p^{h} = \left [ K 0 \right ]P^{h}_{C}$$
+
+where $p^{h}$ and $P_{C}$ are point $p^{h}$ in homogeneous pixel coordinates and point $P_{C}$ in homogeneous camera coordinates
+
+Skewness in some (rare) cases
+
+$$
+K = \begin{bmatrix}
+\alpha  & \gamma  & u_{0}\\ 
+ 0& \beta  & v_{0}\\
+ 0&0  & 1
+\end{bmatrix}
+$$
+
+When is $\gamma$ ≠ 0?
+- x- and y-axis of the camera are not perpendicular (unlikely)
+- For example, as a result of taking an image of an image
+
+Finalement, we obtain:
+
+$$
+\begin{pmatrix}
+u\\ 
+v\\ 
+Z_{C}
+\end{pmatrix}
+=
+\begin{bmatrix}
+\alpha  & \gamma  & u_{0}\\ 
+ 0& \beta  & v_{0}\\
+ 0&0  & 1
+\end{bmatrix}
+\begin{bmatrix}
+R & t\\ 
+1 & 1
+\end{bmatrix}
+\begin{pmatrix}
+X_{W}\\ 
+Y_{W}\\ 
+Z_{W}\\ 
+1
+\end{pmatrix}
+$$
+
+or
+
+$$
+\begin{pmatrix}
+u\\ 
+v\\ 
+Z_{C}
+\end{pmatrix}
+=
+K
+\begin{bmatrix}
+R & t\\ 
+1 & 1
+\end{bmatrix}
+\begin{pmatrix}
+X_{W}\\ 
+Y_{W}\\ 
+Z_{W}\\ 
+1
+\end{pmatrix}
+$$
+
+
 $\rightarrow$ Requiements `intrinsics parameters`:
-- $f$: **focal length** (distance between the lens and the focal point)
-- $\alpha$: **aspect ratio** (1 unless pixels are not square)
+- $(\alpha, \beta)$: **aspect ratio** (1 unless pixels are not square) in the x and y directions
 - ($u_{0}, v_{0}$): **principal point** ((0,0) unless optical axis doesn’t intersect projection plane at origin)
 - $\gamma$: **skew** (0 unless pixels are shaped like rhombi/parallelograms)
 
-<!-- Finally, from both equations we have:
-
-![img](/img/projection_image2.png)
-
-with `\alpha` aspect ratio = 1, `s` skew = 0, `(cx, cy)` = (0, 0):
-
-![img](/img/projection_image3.png)
-
-convert from image coordinates (sx, sy) to pixel coordinates (u, v)
-
-Let kx and ky be the number of pixels per unit distance in image coordinates in the x and y directions, respectively
-
-https://stanfordasl.github.io/aa274a/pdfs/lecture/lecture_8.pdf
-
-
-### Homogeneous coordinates
-- Goal: represent the transformation as a linear mapping
-- Key idea: introduce homogeneous coordinates -->
-
 **Degrees of freedom**: 
-- Intrinsics parameters:
-- Extrinsics parameters: 
+- `Intrinsics parameters`: 5 params $(\alpha, \beta)$, ($u_{0}, v_{0}$), $\gamma$
+- `Extrinsics parameters`: 6 params t, R
 <!-- - 4 for K (or 5 if we also include skewness), 3 for R, and 3 for t. Total is 10 (or 11 if we include skewness) -->
 
 
 REF:
 - [cs4670/2015sp/lectures/lec15_projection_web.pdf](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
 - [lec15_projection_web.pdf](../doc/lec15_projection_web.pdf)
+- https://stanfordasl.github.io/aa274a/pdfs/lecture/lecture_7.pdf
