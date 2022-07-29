@@ -1,0 +1,19 @@
+{
+  "name": "MAI Minh Blog",
+  "short_name": "MAI Minh Blog",
+  "description": "Computer Science Blog | Nguyen Anh Minh MAI, Computer Vision Research Scientist.",
+  "icons": [{
+    "src": "icons/128.png",
+    "sizes": "128x128",
+    "type": "image/png"
+  }, {
+    "src": "icons/512.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#fff",
+  "theme_color": "#000",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
+}
