@@ -12,7 +12,9 @@ baseurl: ""                             # for example, '/blog' if your blog host
 future: true
 
 # SNS settings
+# RSS: true
 RSS: false
+
 # weibo_username:     
 # zhihu_username:     
 github_username:    maiminh1996
@@ -97,6 +99,9 @@ service-worker: true
 
 # MathJax rendering for layout:page (e.g. post preview)
 page-mathjax: false
+page-katex: false
+
+
 
 
 

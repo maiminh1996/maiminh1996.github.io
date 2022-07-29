@@ -41,6 +41,9 @@ layout: default
       <!-- Short About -->
       {% include short-about.html %}
 
+      <!-- Subscribe email -->
+      <!-- <form style="border:1px solid #ccc;padding:3px;text-align:center;" action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('https://feedburner.google.com/fb/a/mailverify?uri=github/aIZv', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true"><p>Enter your email address:</p><p><input type="text" style="width:140px" name="email"/></p><input type="hidden" value="github/aIZv" name="uri"/><input type="hidden" name="loc" value="en_US"/><input type="submit" value="Subscribe" /><p>Delivered by <a href="https://feedburner.google.com" target="_blank">FeedBurner</a></p></form> -->
+
       <!-- Friends Blog -->
       {% include friends.html %}
 
@@ -71,4 +74,9 @@ layout: default
 </script>
 <script type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endif %}
+
+<!-- add support for katex-->
+{% if page.katex %}
+{% include katex_support.html %}
 {% endif %}
