@@ -10,17 +10,14 @@ catalog: true
 tags: [image processing, camera, calibration]
 katex: true
 ---
-Updating ...
 
-# Camera Model
-
-## Pihole camera
+# Pihole camera
 > The simplest camera model is pinhole model which decribes the mathematical relationship of the projection of points in 3d-space onto a image plane.
 
 <img src="/img/camera/pinhole_camera.png" alt="drawing" width="500"/>
 
 
-### Issues with pinhole camera:
+## Issues with pinhole camera
 <img src="/img/camera/diff_lens.png" alt="drawing" width="300"/>
 
 - Larger aperture $\rightarrow$  greater number of light rays that pass through the aperture $\rightarrow$  blur
@@ -28,20 +25,53 @@ Updating ...
 
 $\rightarrow$ Solution: add a lens to replace the aperture! Lens: an optical element that focuses light by means of refraction
 
-### Lenses
+## Lenses
 
-### Thin lens model
+> Lens: an optical element that focuses light by means of refraction
+
+<img src="/img/camera/pinhole-camara-science_orig.jpg" alt="drawing" width="500"/>
+
+## Thin lens model
+Key properties (follows from Snell’s law):
+- Rays passing through 0 are not refracted
+- Rays parallel to the optical axis are focused on the focal point Fʹ
+- All rays passing through P are focused by the thin lens on the point p
+
+<img src="/img/camera/thin_len.png" alt="drawing" width="500"/>
+
+Similar triangles
+
+$$
+\left\{\begin{matrix}
+\frac{y}{Y}=\frac{z}{Z}\\ 
+\frac{y}{Y}=\frac{z-f}{f}=\frac{z}{f}-1
+\end{matrix}\right.
+\Rightarrow 
+\textcolor{red}{\frac{1}{z} + \frac{1}{Z} = \frac{1}{f}}
+$$
+
+Key points:
+- The equations relating the positions of P and p are exactly the same as
+under pinhole perspective if one considers z as focal length (as opposed
+to f), since P and p lie on a ray passing through the center of the lens
+- Points located at a distance −Z from O will be in sharp focus only when
+the image plane is located at a distance z from O on the other side of the
+lens that satisfies the thin lens equation
+- In practice, objects within some range of distances (called depth of field
+or depth of focus) will be in acceptable focus
+- Letting 𝑍 → ∞ shows that f is the distance between the center of the lens
+and the plane where distant objects focus
+- In reality, lenses suffer from a number of aberrations
 
 ## Perspective projection
 
-
 Project a point $P_{W}$ in world coord ($OXYZ$) into a point $p(u, v)$ in pixel coord:
 
-1. [Project a point $P_{W}$ in world coord into a point $P_{C}$ in cam coord](#1-project-a-point-in-world-coord-into-a-point-in-cam-coord)
-2. [Project $P_{C}$ into a point $p(x, y)$ in the image plane](#2-project-the-point-in-cam-coord-into-a-point-in-the-image-plane)
-3. [Project $p(x, y)$ into a pixel $(u, v)$ in pixel coord](#3-project-the-point-in-the-image-plane-into-a-pixel-in-pixel-coord)
+- [Step 1: Project a point $P_{W}$ in world coord into a point $P_{C}$ in cam coord](#step-1-project-a-point-in-world-coord-into-a-point-in-cam-coord)
+- [Step 2: Project $P_{C}$ into a point $p(x, y)$ in the image plane](#step-2-project-the-point-in-cam-coord-into-a-point-in-the-image-plane)
+- [Step 3: Project $p(x, y)$ into a pixel $(u, v)$ in pixel coord](#step-3-project-the-point-in-the-image-plane-into-a-pixel-in-pixel-coord)
 
-### 1 Project a point in world coord into a point in cam coord
+### Step 1 Project a point in world coord into a point in cam coord
 > Goal: Projecting $P_{W}(X_{W}, Y_{W}, Z_{W})$ (World coord) $\rightarrow$ $P_{C}(X_{C}, Y_{C}, Z_{C})$ (Cam coord). <br>Assumption: pinhole camera model (all results also hold under thin lens model, assuming camera is focused at ∞)
 
 <img src="/img/camera/cam_world_coord.png" alt="drawing" width="500"/>
@@ -64,9 +94,10 @@ P_{W}\\
 \end{pmatrix}_{(4\times1)}
 $$
 
-$\rightarrow$ Requiements `extrinsics parameters`: translation vector $t$ (3 params) and the rotation matrix $R$ (3 params).
+$\rightarrow$ Requiements `extrinsics parameters`: translation vector $t_{(3 \times 1)}$ and the rotation matrix $R_{(3 \times 3)}$.
 
-### 2 Project the point in cam coord into a point in the image plane
+### Step 2 Project the point in cam coord into a point in the image plane
+
 > Goal: Projecting $P_{C}(X_{C}, Y_{C}, Z_{C})$ (World coord) $\rightarrow$ $p(x, y)$ (image plane)
 
 <img src="/img/camera/cam_coord_image_plane.png" alt="drawing" width="500"/>
@@ -85,7 +116,8 @@ f\frac{Y_{C}}{Z_{C}}
 \end{pmatrix}
 $$
 
-### 3 Project the point in the image plane into a pixel in pixel coord
+### Step 3 Project the point in the image plane into a pixel in pixel coord
+
 > Goal: Projecting $p(x, y)$ (image plane) $\rightarrow$ p$(u, v)$ (pixel coord)
 
 Actual origin of the camera coordinate system is usually at a corner (e.g., top left, bottom left)
@@ -194,12 +226,40 @@ z/w
 $$
 
 #### Perspective projection in homogeneous coordinates
+
 we have
 
 $$
 \begin{bmatrix}
-\alpha  &0  & u_{0} & 0\\ 
-0 & \beta  & v_{0} &0 \\ 
+\alpha & 0 & u_{0}\\ 
+0 & \beta & v_{0}\\ 
+0 & 0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 & 0\\ 
+0 & 1 & 0 & 0\\ 
+0 & 0 & 1 & 0
+\end{bmatrix}
+\begin{pmatrix}
+X_{C}\\ 
+Y_{C}\\ 
+Z_{C}\\ 
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+\alpha X_{C} + u_{0}Z_{C}\\ 
+\beta Y_{C} + v_{0}Z_{C}\\ 
+Z_{C}
+\end{pmatrix}
+$$
+
+Or
+
+$$
+\begin{bmatrix}
+\alpha & 0 & u_{0} & 0\\ 
+0 & \beta & v_{0} & 0\\ 
 0 & 0 & 1 & 0
 \end{bmatrix}
 \begin{pmatrix}
@@ -236,13 +296,15 @@ When is $\gamma$ ≠ 0?
 - x- and y-axis of the camera are not perpendicular (unlikely)
 - For example, as a result of taking an image of an image
 
-Finalement, we obtain:
+Finally, we obtain:
+
 
 $$
+\textcolor{red}{
 \begin{pmatrix}
 u\\ 
 v\\ 
-Z_{C}
+-
 \end{pmatrix}
 =
 \begin{bmatrix}
@@ -251,27 +313,10 @@ Z_{C}
  0&0  & 1
 \end{bmatrix}
 \begin{bmatrix}
-R & t\\ 
-1 & 1
+1 & 0 & 0 & 0\\ 
+0 & 1 & 0 & 0\\
+0 & 0 & 1 & 0
 \end{bmatrix}
-\begin{pmatrix}
-X_{W}\\ 
-Y_{W}\\ 
-Z_{W}\\ 
-1
-\end{pmatrix}
-$$
-
-or
-
-$$
-\begin{pmatrix}
-u\\ 
-v\\ 
-Z_{C}
-\end{pmatrix}
-=
-K
 \begin{bmatrix}
 R & t\\ 
 1 & 1
@@ -282,7 +327,33 @@ Y_{W}\\
 Z_{W}\\ 
 1
 \end{pmatrix}
+}
 $$
+
+or
+
+$$
+\begin{pmatrix}
+u\\ 
+v\\ 
+-
+\end{pmatrix}
+=
+KP
+\begin{bmatrix}
+R & t\\ 
+1 & 1
+\end{bmatrix}
+\begin{pmatrix}
+X_{W}\\ 
+Y_{W}\\ 
+Z_{W}\\ 
+1
+\end{pmatrix},
+$$
+
+where K, P, $\begin{bmatrix}R & t\\ 1 & 1\end{bmatrix}$, $C = KP\begin{bmatrix} R & t\\ 1 & 1 \end{bmatrix}$ are Intricsic parameters matrix (fundamental characteristics of the camera), Projection matrix, Extrinsic parameters (depend on where camera is) and Camera matrix, respectively.
+
 
 
 $\rightarrow$ Requiements `intrinsics parameters`:
@@ -290,13 +361,14 @@ $\rightarrow$ Requiements `intrinsics parameters`:
 - ($u_{0}, v_{0}$): **principal point** ((0,0) unless optical axis doesn’t intersect projection plane at origin)
 - $\gamma$: **skew** (0 unless pixels are shaped like rhombi/parallelograms)
 
-**Degrees of freedom**: 
+**Degrees of freedom** ($\textcolor{red}{calibration}$): 
 - `Intrinsics parameters`: 5 params $(\alpha, \beta)$, ($u_{0}, v_{0}$), $\gamma$
 - `Extrinsics parameters`: 6 params t, R
 <!-- - 4 for K (or 5 if we also include skewness), 3 for R, and 3 for t. Total is 10 (or 11 if we include skewness) -->
 
 
-REF:
+# REFERENCES
 - [cs4670/2015sp/lectures/lec15_projection_web.pdf](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
 - [lec15_projection_web.pdf](../doc/lec15_projection_web.pdf)
 - https://stanfordasl.github.io/aa274a/pdfs/lecture/lecture_7.pdf
+- [CS4670 / 5670: Computer Vision](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
