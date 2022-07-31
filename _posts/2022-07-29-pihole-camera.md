@@ -8,7 +8,7 @@ header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 catalog: true
 # header-style: text
 tags: [image processing, camera, calibration]
-permalink: /pihole-camera
+# permalink: /pihole-camera
 katex: true
 mathjax: true
 ---
@@ -375,8 +375,7 @@ $\rightarrow$ Requiements `intrinsics parameters`:
 - `Extrinsics parameters`: 6 params $t$, $R$
 <!-- - 4 for K (or 5 if we also include skewness), 3 for R, and 3 for t. Total is 10 (or 11 if we include skewness) -->
 
-Following [Calibration](/camera-calibration) post to find these parameters!
-
+Following [Calibration](../../../../2022/07/31/camera-calibration/index.html) post to find these parameters!
 
 # REFERENCES
 - [Computer Vision: Algorithms and Applications, 2nd ed. by Richard Szeliski](http://szeliski.org/Book/)
