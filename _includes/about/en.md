@@ -6,7 +6,7 @@ Back in the past, in 2019, I got my Diplôme d’Ingénieur (a parallel "Master 
 
 **Skills**: Python, C++, C, ROS, Pytorch, Keras, Tensorflow
 
-**My resume**: [1-page resume](../../img/Nguyen_Anh_Minh_MAI_resume.pdf)
+**My resume**: [1-page resume](/docs/Nguyen_Anh_Minh_MAI_resume.pdf)
 
 ### Research
 
