@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pihole Camera"
-subtitle: "Pihole Camera, Geometry and 3D Understanding"
+subtitle: "Basic Geometry and 3D Understanding (Part 1)"
 date: 2022-07-29
 author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
@@ -9,12 +9,20 @@ catalog: true
 # header-style: text
 tags: [image processing, camera, calibration]
 katex: true
+mathjax: true
 ---
+
+[Completed]
+
+# Goal
+> Presenting pihole camera model and how to project the world into pixel
 
 # Pihole camera
 > The simplest camera model is pinhole model which decribes the mathematical relationship of the projection of points in 3d-space onto a image plane.
 
 <img src="/img/camera/pinhole_camera.png" alt="drawing" width="500"/>
+
+Design a simple camera system – a system that can record an image of an object or scene in the 3D world. This camera system can be designed by placing **a barrier with a small aperture** between the 3D object and a photographic film or sensor. As shown in the image above, each point on the 3D object emits multiple rays of light outwards. Without a barrier in place, every point on the film will be influenced by light rays emitted from every point on the 3D object. Due to the barrier, **only one (or a few) of these rays of light passes through the aperture and hits the film**. Therefore, we can establish a **one-to-one mapping** between points on the 3D object and the film. The result is that the film gets exposed by an "image" of the 3D object by means of this mapping. This simple model is known as the **pinhole camera model**.
 
 
 ## Issues with pinhole camera
@@ -65,7 +73,7 @@ and the plane where distant objects focus
 
 ## Perspective projection
 
-Project a point $P_{W}$ in world coord ($OXYZ$) into a point $p(u, v)$ in pixel coord:
+Project a point $P_{W}$ in world coord into a point $p(u, v)$ in pixel coord:
 
 - [Step 1: Project a point $P_{W}$ in world coord into a point $P_{C}$ in cam coord](#step-1-project-a-point-in-world-coord-into-a-point-in-cam-coord)
 - [Step 2: Project $P_{C}$ into a point $p(x, y)$ in the image plane](#step-2-project-the-point-in-cam-coord-into-a-point-in-the-image-plane)
@@ -361,14 +369,17 @@ $\rightarrow$ Requiements `intrinsics parameters`:
 - ($u_{0}, v_{0}$): **principal point** ((0,0) unless optical axis doesn’t intersect projection plane at origin)
 - $\gamma$: **skew** (0 unless pixels are shaped like rhombi/parallelograms)
 
-**Degrees of freedom** ($\textcolor{red}{calibration}$): 
+**Degrees of freedom**: 
 - `Intrinsics parameters`: 5 params $(\alpha, \beta)$, ($u_{0}, v_{0}$), $\gamma$
-- `Extrinsics parameters`: 6 params t, R
+- `Extrinsics parameters`: 6 params $t$, $R$
 <!-- - 4 for K (or 5 if we also include skewness), 3 for R, and 3 for t. Total is 10 (or 11 if we include skewness) -->
+
+Following [$\textcolor{red}{Calibration}$](../../../../2022/07/29/camera-calibration/index.html) post to find these parameters!
 
 
 # REFERENCES
-- [cs4670/2015sp/lectures/lec15_projection_web.pdf](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
-- [lec15_projection_web.pdf](../doc/lec15_projection_web.pdf)
-- https://stanfordasl.github.io/aa274a/pdfs/lecture/lecture_7.pdf
-- [CS4670 / 5670: Computer Vision](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
+- [Computer Vision: Algorithms and Applications, 2nd ed. by Richard Szeliski](http://szeliski.org/Book/)
+- [CS231A Course Notes 1: Camera Models](https://web.stanford.edu/class/cs231a/course_notes/01-camera-models.pdf)
+- [CS4670/ 5670: Computer Vision](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
+- [AA174A/ AA274A/ CS237A/ EE260A Principles of Robot Autonomy I](https://stanfordasl.github.io/aa274a/pdfs/lecture/lecture_7.pdf)
+- [CS4670/ 5670 Introduction to Computer Vision](https://www.cs.cornell.edu/courses/cs4670/2015sp/lectures/lec15_projection_web.pdf)
