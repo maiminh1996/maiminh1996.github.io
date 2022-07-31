@@ -13,7 +13,8 @@ katex: true
 mathjax: true
 ---
 
-[Completed]
+<b>[Completed] Last modified: </b>
+<script>document.write( document.lastModified );</script>
 
 # Goal
 > Presenting pihole camera model and how to project the world into pixel

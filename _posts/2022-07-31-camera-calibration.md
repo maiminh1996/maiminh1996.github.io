@@ -11,7 +11,8 @@ katex: true
 mathjax: true
 ---
 
-[Updating ...]
+<b>[Updating ...] Last modified: </b>
+<script>document.write( document.lastModified );</script>
 
 # Goal
 

@@ -11,6 +11,9 @@ katex: true
 mathjax: true
 ---
 
+<b>[Completed] Last modified: </b>
+<script>document.write( document.lastModified );</script>
+
 # Goal 
 > Installing OpenCV for both Python and C++ in Linux
 
