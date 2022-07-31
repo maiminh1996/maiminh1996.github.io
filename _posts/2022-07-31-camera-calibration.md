@@ -6,6 +6,9 @@ date: 2022-07-31
 author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 tags: [camera, calibration]
+permalink: /camera-calibration
+katex: true
+mathjax: true
 ---
 
 [Updating ...]
