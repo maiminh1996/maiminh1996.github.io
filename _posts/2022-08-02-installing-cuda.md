@@ -2,7 +2,7 @@
 layout: post
 title: "Installing CUDA"
 subtitle: "GPGPU"
-date: 2022-08-07
+date: 2022-08-02
 author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 catalog: true
@@ -133,6 +133,7 @@ Choose the right version (by matching the information system machine to cuda req
 # Install cuda following
 # https://developer.nvidia.com/cuda-X-Y-download-archive
 # Ex: https://developer.nvidia.com/cuda-11-7-1-download-archive
+# https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html#ubuntu-x86_64-deb
 sudo dpkg -i dev.file
 sudo apt-key add /var/cuda.../7..
 sudo apt update
@@ -145,10 +146,14 @@ sudo apt-get install cuda # default, may be not the version we want
 ```
 Add path in `~/.bashrc`
 ```bash
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:${PATH:+:${PATH}}
 export CUDA_PATH=/usr/local/cuda
 export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+```
+Reboot the system to load the NVIDIA drivers
+```bash
+sudo reboot
 ```
 
 Check installing
@@ -267,10 +272,10 @@ ls -l /usr/local # see cuda folder ref to cuda-X.Y
 ```
 In `~/.bashrc`
 ```bash
-export PATH=/usr/local/cuda/bin:$PATH
+export PATH=/usr/local/cuda/bin:${PATH:+:${PATH}}
 export CUDA_PATH=/usr/local/cuda
 export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
 
 ## Errors
