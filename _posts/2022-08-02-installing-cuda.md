@@ -193,6 +193,8 @@ chmod +x <file>
 sudo ./<file>
 ```
 
+Applications built against any of the older CUDA Toolkits always continued to function on newer drivers due to binary backward compatibility.
+
 [Do I need to uninstall my older driver first?](https://www.nvidia.com/en-gb/drivers/drivers-faq/#installing): No. It used to be the case that an uninstall was first required. Today the recommended method is to overinstall the newer driver on top of your older driver. This will allow you to maintain any current NVIDIA Control Panel settings or profiles. 
 
 - Install cuDNN libs (for deep learning-based application)
