@@ -17,30 +17,27 @@ I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Lea
 <p>
     <b>Camera and LiDAR analysis for 3D object detection in foggy weather conditions</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
-    ICPRS 2022, DOI: <a href='https://ieeexplore.ieee.org/document/9854073' target="_blank">10.1109/ICPRS54038.2022.9854073</a>
-    <!-- <br>
-    [<a href='https://github.com/maiminh1996/MultifogKITTI' target="_blank">Code & Datasets</a>], [<a href='https://maiminh1996.github.io/MultifogKITTI/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=MultifogKITTI&type=star&count=true"></iframe> -->
+    ICPRS 2022, DOI: <a href='https://ieeexplore.ieee.org/document/9854073' target="_blank">10.1109/ICPRS54038.2022.9854073</a><br>
+    [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=camera_LiDAR_analysis&type=star&count=true"></iframe>
 </p>
 
 <p>
     <b>3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     SENSORS, DOI: <a href='https://doi.org/10.3390/s21206711' target="_blank">10.3390/s21206711</a><br>
-    [<a href='https://github.com/maiminh1996/MultifogKITTI' target="_blank">Code & Datasets</a>], [<a href='https://maiminh1996.github.io/MultifogKITTI/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=MultifogKITTI&type=star&count=true"></iframe>
+    [<a href='https://github.com/maiminh1996/MultifogKITTI' target="_blank">Code & Datasets</a>] [<a href='https://maiminh1996.github.io/MultifogKITTI/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=MultifogKITTI&type=star&count=true"></iframe>
 </p>
 
 <p>
     <b>Détection d'obstacles par vision et LiDAR par temps de brouillard pour les véhicules autonomes</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     ORASIS 2021, HAL: <a href='https://hal.archives-ouvertes.fr/hal-03241464/' target="_blank">hal-03241464</a>
-    <!-- <br>
-    [<a href='https://github.com/maiminh1996/MultifogKITTI' target="_blank">Code & Datasets</a>], [<a href='https://maiminh1996.github.io/MultifogKITTI/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=MultifogKITTI&type=star&count=true"></iframe> -->
 </p>
 
 <p>
     <b>Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     ICPRS 2021, DOI: <a href='https://ieeexplore.ieee.org/document/9569023' target="_blank">10.1049/icp.2021.1442</a><br>
-    [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>], [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
+    [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>] [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
 </p>
 
