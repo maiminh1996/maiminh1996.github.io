@@ -38,6 +38,6 @@ I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Lea
     <b>Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     ICPRS 2021, DOI: <a href='https://ieeexplore.ieee.org/document/9569023' target="_blank">10.1049/icp.2021.1442</a><br>
-    [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>] [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
+    [<a href='https://arxiv.org/abs/2103.03977' target="_blank">arXiv</a>] [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>] [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
 </p>
 
