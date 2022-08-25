@@ -11,3 +11,35 @@ Back in the past, in 2019, I got my Diplôme d’Ingénieur (a parallel "Master 
 ### Research
 
 I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Learning, Deep Learning, Production Machine Learning, Edge Devices and Systems. 
+
+### Publication
+
+**Camera and LiDAR analysis for 3D object detection in foggy weather conditions**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+ICPRS 2022<br>
+DOI: [10.1109/ICPRS54038.2022.9854073](https://ieeexplore.ieee.org/document/9854073)<br>
+
+
+**3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+SENSORS<br>
+DOI: [10.3390/s21206711](https://doi.org/10.3390/s21206711),
+[[Datasets](https://maiminh1996.github.io/multifogkitti/)] 
+    <!-- <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=github.com/maiminh1996/MultifogKITTI&type=star&count=true"></iframe> -->
+<br>
+
+**Détection d'obstacles par vision et LiDAR par temps de brouillard pour les véhicules autonomes**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+ORASIS 2021<br>
+HAL: [hal-03241464](https://hal.archives-ouvertes.fr/hal-03241464/)<br>
+
+**Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+ICPRS 2021<br>
+DOI: [10.1049/icp.2021.1442](https://ieeexplore.ieee.org/document/9569023), [[Code](https://github.com/maiminh1996/SLS-Fusion)]
+
+<!-- [[Code](https://github.com/maiminh1996/SLS-Fusion)] <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=maiminh1996.github.io&type=star&count=true"></iframe> -->
+
+
+
+<!-- <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?list=PLUrG9TigQJQXKuAzG5s-zfc5mKO1SBTbK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
