@@ -16,7 +16,7 @@ sidebar: false
 header-mask: 0.2
 hide-in-nav: true
 ---
-### [[GitHub](https://github.com/maiminh1996/sparse_lidar_kitti_datasets]
+### [[GitHub](https://github.com/maiminh1996/sparse_lidar_kitti_datasets)]
 <!-- <img src="/img/camera/diff_lens.png" alt="drawing" width="300"/> -->
 <!-- ![](/img/sensors.png) -->
 
