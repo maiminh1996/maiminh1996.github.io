@@ -87,8 +87,9 @@ layout: default
                 sidebar-container">
 
                 <!-- Featured Tags -->
-                {% include featured-tags.html bottom=true %}
-
+                {% unless page.no-catalog %}
+                    {% include featured-tags.html bottom=true %}
+                {% endunless %}
                 <!-- Friends Blog -->
                 {% include friends.html %}
             </div>
