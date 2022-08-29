@@ -15,17 +15,24 @@ I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Lea
 ### Publication
 
 <p>
+    <b>Sparse LiDAR KITTI datasets</b><br>
+    <i>Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
+    <!-- ICPRS 2022, DOI: <a href='https://ieeexplore.ieee.org/document/9854073' target="_blank">10.1109/ICPRS54038.2022.9854073</a><br> -->
+    [<a href='../research/sparse_lidar_kitti_datasets/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=camera_LiDAR_analysis&type=star&count=true"></iframe>
+</p>
+
+<p>
     <b>Camera and LiDAR analysis for 3D object detection in foggy weather conditions</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     ICPRS 2022, DOI: <a href='https://ieeexplore.ieee.org/document/9854073' target="_blank">10.1109/ICPRS54038.2022.9854073</a><br>
-    [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=camera_LiDAR_analysis&type=star&count=true"></iframe>
+    [<a href='../research/camera_lidar_analysis' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=camera_LiDAR_analysis&type=star&count=true"></iframe>
 </p>
 
 <p>
     <b>3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     SENSORS, DOI: <a href='https://doi.org/10.3390/s21206711' target="_blank">10.3390/s21206711</a><br>
-    [<a href='https://github.com/maiminh1996/MultifogKITTI' target="_blank">Code & Datasets</a>] [<a href='../MultifogKITTI/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=MultifogKITTI&type=star&count=true"></iframe>
+    [<a href='https://github.com/maiminh1996/multifogkitti' target="_blank">Code & Datasets</a>] [<a href='../research/multifogkitti/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=MultifogKITTI&type=star&count=true"></iframe>
 </p>
 
 <p>
@@ -38,6 +45,6 @@ I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Lea
     <b>Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection</b><br>
     <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
     ICPRS 2021, DOI: <a href='https://ieeexplore.ieee.org/document/9569023' target="_blank">10.1049/icp.2021.1442</a><br>
-    [<a href='https://arxiv.org/abs/2103.03977' target="_blank">arXiv</a>] [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>] [<a href='https://maiminh1996.github.io/SLS-Fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
+    [<a href='https://arxiv.org/abs/2103.03977' target="_blank">arXiv</a>] [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>] [<a href='../research/sls-fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
 </p>
 

@@ -52,7 +52,7 @@ If you want to work on sparse LiDAR, please refer [here](https://maiminh1996.git
 ### Citation
 If you find our work useful in your research, please consider citing:
   
-    @Article{s21206711,
+    @Article{nammai_sensors_2021,
         AUTHOR = {Mai, Nguyen Anh Minh and Duthon, Pierre and Khoudour, Louahdi and Crouzil, Alain and Velastin, Sergio A.},
         TITLE = {3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions},
         JOURNAL = {Sensors},
