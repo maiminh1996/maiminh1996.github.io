@@ -47,7 +47,7 @@ The training and testing part of our Multifog KITTI datasets (SENSORS 2021) are 
     - [[velodyne_4beams]()] (.bin, )
     - [[visibility_level](https://drive.google.com/file/d/1EE-IrCgIFvpwk5k0QModJi9Ngol1Mvrd/view?usp=sharing)] (.txt, 20m to 80m visibility level)
 
-If you want to work on sparse LiDAR, please refer [here](https://maiminh1996.github.io/sparse_lidar_kitti_datasets/) for LiDAR 2 beams, LiDAR 4 beams, 8 beams, 16 beams, 32 beams based on LiDAR 64 beams (KITTI dataset).
+If you want to work on sparse LiDAR, please refer [here](../sparse_lidar_kitti_datasets/) for LiDAR 2 beams, LiDAR 4 beams, 8 beams, 16 beams, 32 beams based on LiDAR 64 beams (KITTI dataset).
 
 ### Citation
 If you find our work useful in your research, please consider citing:
