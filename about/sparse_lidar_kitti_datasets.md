@@ -39,9 +39,25 @@ Sparse LiDAR extracted from LiDAR 64 beams
     - [[LiDAR 32 beams](https://drive.google.com/file/d/1mT0ezygizWTtd1k1bD9W7-LH9lveK8gF/view?usp=sharing)]  (.bin, 1,0 GB)
 
 ### Citation
+If you find our work useful in your research, please consider citing:
+
     @misc{Mai_My_Research_Sparse_2022,
         author = {Mai, Nguyen Anh Minh and Duthon, Pierre and Houssam SALMANE, Pascal and Khoudour, Louahdi and Crouzil, Alain and A. Velastin, Sergio},
         month = {8},
         title = {{Sparse LiDAR KITTI Datasets}},
         url = {https://github.com/maiminh1996/sparse_lidar_kitti_datasets},
         year = {2022}
+
+    @INPROCEEDINGS{nammai_icprs_2021,
+        author={Mai, N.-A.-M. and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
+        booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
+        title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
+        year={2021},
+        volume={2021},
+        number={},
+        pages={150-156},
+        doi={10.1049/icp.2021.1442}}
+
+### Contact
+
+Any feedback is very welcome! Please contact us at <mainguyenanhminh1996@gmail.com>
