@@ -52,31 +52,34 @@ If you want to work on sparse LiDAR, please refer [here](../sparse_lidar_kitti_d
 ### Citation
 If you find our work useful in your research, please consider citing:
   
-    @Article{nammai_sensors_2021,
-        AUTHOR = {Mai, Nguyen Anh Minh and Duthon, Pierre and Khoudour, Louahdi and Crouzil, Alain and Velastin, Sergio A.},
-        TITLE = {3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions},
-        JOURNAL = {Sensors},
-        VOLUME = {21},
-        YEAR = {2021},
-        NUMBER = {20},
-        ARTICLE-NUMBER = {6711},
-        URL = {https://www.mdpi.com/1424-8220/21/20/6711},
-        PubMedID = {34695925},
-        ISSN = {1424-8220},
-        ABSTRACT = {},
-        DOI = {10.3390/s21206711}
-    }
+```
+@Article{nammai_sensors_2021,
+    AUTHOR = {Mai, Nguyen Anh Minh and Duthon, Pierre and Khoudour, Louahdi and Crouzil, Alain and Velastin, Sergio A.},
+    TITLE = {3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions},
+    JOURNAL = {Sensors},
+    VOLUME = {21},
+    YEAR = {2021},
+    NUMBER = {20},
+    ARTICLE-NUMBER = {6711},
+    URL = {https://www.mdpi.com/1424-8220/21/20/6711},
+    PubMedID = {34695925},
+    ISSN = {1424-8220},
+    ABSTRACT = {},
+    DOI = {10.3390/s21206711}
+}
+```
 
-
-    @INPROCEEDINGS{nammai_icprs_2021,
-        author={Mai, N.-A.-M. and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
-        booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
-        title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
-        year={2021},
-        volume={2021},
-        number={},
-        pages={150-156},
-        doi={10.1049/icp.2021.1442}}
+```
+@INPROCEEDINGS{nammai_icprs_2021,
+    author={Mai, N.-A.-M. and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
+    booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
+    title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
+    year={2021},
+    volume={2021},
+    number={},
+    pages={150-156},
+    doi={10.1049/icp.2021.1442}}
+```
 
 ### Contact
 
