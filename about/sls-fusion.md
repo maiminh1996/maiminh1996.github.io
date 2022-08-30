@@ -43,3 +43,7 @@ If you find our work useful in your research, please consider citing:
         number={},
         pages={150-156},
         doi={10.1049/icp.2021.1442}}
+
+### Contact
+
+Any feedback is very welcome! Please contact us at <mainguyenanhminh1996@gmail.com>

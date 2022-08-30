@@ -44,3 +44,7 @@ If you find our work useful in your research, please consider citing:
         number={},
         pages={1-7},
         doi={10.1109/ICPRS54038.2022.9854073}}
+
+### Contact
+
+Any feedback is very welcome! Please contact us at <mainguyenanhminh1996@gmail.com>
