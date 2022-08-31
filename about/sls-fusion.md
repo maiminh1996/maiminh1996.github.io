@@ -3,7 +3,7 @@ layout: post
 title: "SLS-Fusion: Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection"
 subtitle: "by Nguyen Anh Minh MAI, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin."
 date: 2022-07-29
-# author: "MAI Minh"
+author: "MAI Minh"
 # header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 catalog: false
 no-catalog: true
