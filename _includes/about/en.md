@@ -6,45 +6,36 @@ Back in the past, in 2019, I got my Diplôme d’Ingénieur (a parallel "Master 
 
 **Skills**: Python, C++, C, ROS, Pytorch, Keras, Tensorflow
 
-**My resume**: [1-page resume](/docs/Nguyen_Anh_Minh_MAI_resume.pdf)
+**My resume**: [1-page resume](/docs/cv_Nguyen_Anh_Minh_MAI.pdf)
 
 ### Research
 
-I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Learning, Deep Learning, Production Machine Learning, Edge Devices and Systems. 
+I'm interested in Image Processing, Computer Vision (camera, LiDAR), Machine Learning, Deep Learning, Production Machine Learning, Edge Devices and Systems.
 
 ### Publication
 
-<p>
-    <b>Sparse LiDAR KITTI datasets</b><br>
-    <i>Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
-    <!-- ICPRS 2022, DOI: <a href='https://ieeexplore.ieee.org/document/9854073' target="_blank">10.1109/ICPRS54038.2022.9854073</a><br> -->
-    [<a href='../about/sparse_lidar_kitti_datasets/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=sparse_lidar_kitti_datasets&type=star&count=true"></iframe>
-</p>
+**Sparse LiDAR KITTI datasets**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+[[BibTex](../../about/mai_sparse.txt)] [<a href='../about/sparse_lidar_kitti_datasets/' target="_blank">Project page</a>]
 
-<p>
-    <b>Camera and LiDAR analysis for 3D object detection in foggy weather conditions</b><br>
-    <i>Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
-    ICPRS 2022, DOI: <a href='https://ieeexplore.ieee.org/document/9854073' target="_blank">10.1109/ICPRS54038.2022.9854073</a><br>
-    [<a href='../about/camera_lidar_analysis' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=camera_LiDAR_analysis&type=star&count=true"></iframe>
-</p>
+**Camera and LiDAR analysis for 3D object detection in foggy weather conditions**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+ICPRS 2022, DOI: [10.1109/ICPRS54038.2022.9854073](https://ieeexplore.ieee.org/document/9854073), HAL: [hal-03820137](https://hal.archives-ouvertes.fr/hal-03820137/)<br>
+[[BibTex](../../about/mai_cameralidar_2022.txt)] [<a href='../about/camera_lidar_analysis' target="_blank">Project page</a>]
 
-<p>
-    <b>3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions</b><br>
-    <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
-    SENSORS, DOI: <a href='https://doi.org/10.3390/s21206711' target="_blank">10.3390/s21206711</a><br>
-    [<a href='https://github.com/maiminh1996/multifogkitti' target="_blank">Code & Datasets</a>] [<a href='../about/multifogkitti/' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=multifogkitti&type=star&count=true"></iframe>
-</p>
+**3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+SENSORS, DOI: [10.3390/s21206711](https://doi.org/10.3390/s21206711)<br>
+[[BibTex](../../about/mai_sensors_2021.txt)] [[Code & Datasets](https://github.com/maiminh1996/multifogkitti)] [<a href='../about/multifogkitti' target="_blank">Project page</a>]
 
-<p>
-    <b>Détection d'obstacles par vision et LiDAR par temps de brouillard pour les véhicules autonomes</b><br>
-    <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
-    ORASIS 2021, HAL: <a href='https://hal.archives-ouvertes.fr/hal-03241464/' target="_blank">hal-03241464</a>
-</p>
+**Détection d'obstacles par vision et LiDAR par temps de brouillard pour les véhicules autonomes**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+ORASIS 2021, HAL: [hal-03241464](https://hal.archives-ouvertes.fr/hal-03241464/)<br>
+[[BibTex](../../about/mai_orasis_2021.txt)]
 
-<p>
-    <b>Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection</b><br>
-    <i>Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin</i><br>
-    ICPRS 2021, DOI: <a href='https://ieeexplore.ieee.org/document/9569023' target="_blank">10.1049/icp.2021.1442</a><br>
-    [<a href='https://arxiv.org/abs/2103.03977' target="_blank">arXiv</a>] [<a href='https://github.com/maiminh1996/SLS-Fusion' target="_blank">Code</a>] [<a href='../about/sls-fusion' target="_blank">Project page</a>] <iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe>
-</p>
+**Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection**<br>
+*Nguyen Anh Minh Mai, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin*<br>
+ICPRS 2021, DOI: [10.1049/icp.2021.1442](https://ieeexplore.ieee.org/document/9569023), arXiv [2103.03977](https://arxiv.org/abs/2103.03977)<br>
+[[BibTex](../../about/mai_sls_2021.txt)] [[Code](https://github.com/maiminh1996/SLS-Fusion)] [<a href='../about/sls-fusion' target="_blank">Project page</a>]
 
+<!-- <p><iframe style="margin-left: 2px; margin-top: -15px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="100px" height="20px" src="https://ghbtns.com/github-btn.html?user=maiminh1996&repo=SLS-Fusion&type=star&count=true"></iframe></p> -->
