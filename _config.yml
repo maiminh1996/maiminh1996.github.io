@@ -27,7 +27,10 @@ linkedin_username:  nguyen-anh-minh-mai
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
-permalink: pretty
+# permalink: pretty
+permalink: 
+- /:year/:month/:day/:title/
+- /publication/
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json", "README.vi.md", "README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
