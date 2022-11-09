@@ -1,6 +1,6 @@
 ### Knowledge
 
-[Data Structures](/distilled/datastructure.md), Machine Learning, Deep Learning, Image Processing, Computer Vision (camera & LiDAR), ADAS.
+[Data Structures](/distilled/datastructure), Machine Learning, Deep Learning, Image Processing, Computer Vision (camera & LiDAR), ADAS.
 
 ### Programming Languages
 
