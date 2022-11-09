@@ -7,6 +7,7 @@ author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 catalog: true
 tags: [installing, opencv, image processing, computer vision]
+permalink: /posts/installing-opencv
 katex: true
 mathjax: true
 ---

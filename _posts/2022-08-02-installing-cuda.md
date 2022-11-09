@@ -7,6 +7,7 @@ author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 catalog: true
 tags: [cuda, installing, gpgpu, deep learning]
+permalink: /posts/installing-cuda
 katex: true
 mathjax: true
 ---

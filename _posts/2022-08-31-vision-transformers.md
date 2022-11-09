@@ -6,6 +6,7 @@ date: 2022-08-31
 author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 tags: [deep learning, computer vision, transformer]
+permalink: /posts/vision-transformers
 ---
 
 Transformer: Attention Is All You Need [`NIPS 2017`](https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) [nlp]

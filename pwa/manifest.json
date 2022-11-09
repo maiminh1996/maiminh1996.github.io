@@ -3,11 +3,11 @@
   "short_name": "MAI Minh",
   "description": "Computer Science Blog | Nguyen Anh Minh MAI, Computer Vision Research Scientist.",
   "icons": [{
-    "src": "icons/128.png",
+    "src": "icons/logo_minh.png",
     "sizes": "128x128",
     "type": "image/png"
   }, {
-    "src": "icons/512.png",
+    "src": "icons/logo_minh.png",
     "sizes": "512x512",
     "type": "image/png"
   }],
