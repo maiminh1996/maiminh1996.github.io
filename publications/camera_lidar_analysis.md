@@ -9,7 +9,7 @@ catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-permalink: /camera_lidar_analysis
+permalink: /publications/camera_lidar_analysis
 katex: true
 mathjax: true
 sidebar: false

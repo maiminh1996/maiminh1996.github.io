@@ -9,7 +9,7 @@ catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-permalink: /sparse_lidar_kitti_datasets
+permalink: /publications/sparse_lidar_kitti_datasets
 katex: true
 mathjax: true
 sidebar: false

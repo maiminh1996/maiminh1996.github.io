@@ -9,7 +9,7 @@ catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-permalink: /multifogkitti
+permalink: /publications/multifogkitti
 katex: true
 mathjax: true
 sidebar: false

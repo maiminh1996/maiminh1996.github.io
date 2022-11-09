@@ -9,7 +9,7 @@ catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-permalink: /sls-fusion
+permalink: /publications/sls-fusion
 katex: true
 mathjax: true
 sidebar: false

@@ -1,9 +1,0 @@
-@article{mai_3d_2021,
-	title = {{3D} {Object} {Detection} with {SLS}-{Fusion} {Network} in {Foggy} {Weather} {Conditions}},
-	volume = {21},
-	doi = {10.3390/s21206711},
-	number = {20},
-	journal = {Sensors},
-	author = {Mai, Nguyen Anh Minh and Duthon, Pierre and Khoudour, Louahdi and Crouzil, Alain and Velastin, Sergio A.},
-	year = {2021},
-}

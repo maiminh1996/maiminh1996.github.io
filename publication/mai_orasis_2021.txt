@@ -1,9 +1,0 @@
-@inproceedings{mai_3d_2021_fr,
-    title = {{D{\'e}tection d'obstacles par vision et LiDAR par temps de brouillard pour les v{\'e}hicules autonomes}},
-    author = {Mai, Nguyen Anh Minh and Duthon, Pierre and Crouzil, Alain and Khoudour, Louahdi and A. Velastin, Sergio},
-    url = {https://hal.archives-ouvertes.fr/hal-03339637},
-    booktitle = {Proceedings of journ{\'e}es francophones des jeunes chercheurs en vision par ordinateur (ORASIS)},
-    year = {2021},
-    hal_id = {hal-03339637},
-    hal_version = {v1},
-}
