@@ -9,7 +9,7 @@ catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-# permalink: /pihole-camera
+permalink: /sls-fusion
 katex: true
 mathjax: true
 sidebar: false
