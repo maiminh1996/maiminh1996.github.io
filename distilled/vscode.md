@@ -1,0 +1,316 @@
+---
+layout: post
+title: VS Code
+catalog: true
+no-catalog: false
+no-featured-tags: true
+header-style: text
+tags: [vs code, ide, debug]
+katex: true
+mathjax: true
+hide-in-nav: true
+---
+
+### Installing
+
+Download `.deb` file for Linux system from <https://code.visualstudio.com/>
+
+
+```bash
+sudo dpkg -i DEB_FILE
+```
+
+### Run and Debug Python in VS Code
+
+- Extension:
+  - python
+  - jupyter
+- [IntelliSense](https://code.visualstudio.com/docs/python/editing#_autocomplete-and-intellisense): Edit your code with auto-completion, code navigation, syntax checking and more
+- [Linting](https://code.visualstudio.com/docs/python/linting): Get additional code analysis with Pylint, Flake8 and more
+- [Code formatting](https://code.visualstudio.com/docs/python/editing#_formatting): Format your code with black, autopep or yapf
+- [Environments](https://code.visualstudio.com/docs/python/environments): Automatically activate and switch between `virtualenv`, `venv`, `pipenv`, `conda` and `pyenv` environments
+- Debug <https://code.visualstudio.com/docs/python/debugging>
+`launch.json`
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}", // debug from current file
+            "args": ["--config", "../configs/sls_fusion_sceneflow.config"] // arguments
+        }
+    ]
+```
+
+- [Testing](https://code.visualstudio.com/docs/python/testing): Run and debug tests through the Test Explorer with unittest, pytest or nose
+- [Refactoring](https://code.visualstudio.com/docs/python/editing#_refactoring): Restructure your Python code with variable extraction, method extraction and import sorting
+
+#### error
+- VS Code Debugger not working for python https://learn.microsoft.com/en-us/answers/questions/724858/vscode-debugger-not-working-for-python.html
+
+Python Extension version v2022.10.1 running on Ubuntu 18.04 with python 3.6.9. --> python3.6 -> 3.9
+
+```
+# https://opensource.com/article/20/4/install-python-linux
+sudo apt install build-essential zlib1g-dev \
+libncurses5-dev libgdbm-dev libnss3-dev \
+libssl-dev libreadline-dev libffi-dev curl software-properties-common
+wget https://www.python.org/ftp/python/3.9.0/Python-3.9.0.tar.xz
+tar -xf Python-3.9.0.tar.xz
+cd Python-3.9.0
+./configure
+sudo make altinstall
+python3.9 --version
+which python3.9
+"""
+
+in VScode, change to python3.9 version (bottom right bar)
+
+
+
+
+### Run and Debug CPP in VS Code
+
+Ref: <https://code.visualstudio.com/docs/cpp/config-linux>
+
+Steps:
+
+- Using VS Code to edit your source code
+- Compiling the source code on Linux using the `g++` or `gcc` compiler
+- Using `gdb` to debug
+
+Extensions: C++, CMake Tools
+
+Set custom shortcuts: `Go to File` => `Preferences` => `Keyboard Shortcuts`
+
+#### Create a `tasks.json` file to tell VS Code how to build (compile) the program
+
+> run >  Terminal > Configure Default Build Task > C/C++: g++ build active file > This will create a `tasks.json` file in a `.vscode`
+
+```json
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build active file",
+            // specifies the program to run; in this case that is g++
+            "command": "/usr/bin/g++",
+            // specifies the command-line arguments that will be passed to g++
+            // This task tells g++ to take the active file (${file}), 
+            // compile it
+            // , and create an executable file in the current directory (${fileDirname}) 
+            // with the same name as the active file but without an extension (${fileBasenameNoExtension}), 
+            // resulting in helloworld for our example.
+            // "args": ["-g", "${file}", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+            "args": ["-g", "${file}", "-std=c++11", "-o", "${fileDirname}/${fileBasenameNoExtension}"],
+            "options": {
+                // "cwd": "${workspaceFolder}"
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "compiler: /usr/bin/g++"
+        }
+    ]
+}
+```
+
+`Ctrl+shift+B` == `> Terminal > Run build task`
+
+#### Next, ceate a `launch.json` file to configure VS Code to launch the `gdb` debugger when you press F5 to debug the program
+
+After build successful and got file run we can start to debug
+
+### Debug cpp
+
+> Run > Add Configuration... and then choose C++ (GDB/ LLDB) > g++ build and debug active file
+
+Ref: <https://cppdeveloper.com/c-nang-cao/ky-thuat-debug-tren-visual-studio/>
+
+Call Stack, Watch Window,Threads Window
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "g++ build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      // ${fileBasenameNoExtension}: active filename without an extension
+      // ${fileDirname}: active file folder 
+      // which if helloworld.cpp is the active file will be helloworld
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      // value to true to cause the debugger to stop on the main method when you start debugging.
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ],
+      "preLaunchTask": "g++ build active file",
+      "miDebuggerPath": "/usr/bin/gdb"
+    }
+  ]
+}
+```
+
+Set `Breakpoint`
+
+Push `F5` == `> Run > Start Debugging`
+
+break point --> To open Disassembly View while debugging, right click your source code and select Open Disassembly View. 
+
+https://codelearn.io/sharing/nao-thi-di-san-bug-phan-1
+- memory
+    - NULL pointer
+- disassembly
+- constant folding.
+- dead code elimination.
+- Với những lập trình viên có kinh nghiệm, việc code một đằng chạy một nẻo là quá bình thường. Kinh nghiệm ở đây là high-level không thấy bug thì phải xuống thấp hơn cho đến khi nào ra vấn đề. Càng low-level thì khả năng ăn quả lừa càng thấp. Đấy cũng là lý do vì sao 99.99% thời gian bạn toàn code .Net, Javascript nhưng vẫn phải học mấy món như C/C++, ASM. Code nó không chạy thì còn biết đường mà fix thôi.
+
+#### CMake Tools
+
+Ref: <https://code.visualstudio.com/docs/cpp/cmake-linux>
+
+> (Ctrl+Shift+P) and run the CMake: Quick Start command > Executable/ Library > CMake: Select a Kit > project name
+
+- Using the CMake Tools extension for Visual Studio Code to configure, build, and debug a simple C++ CMake project on Linux.
+- Aside from installing CMake, your compiler, debugger, and build tools, the steps in this tutorial apply generally to how you'd use CMake on other platforms, like Windows.
+- CMake Tools extension can create the files for a basic CMake project for you
+
+
+This creates a hello world CMake project containing `main.cpp`, `CMakeLists.txt`, `build`
+
+`CMakeLists.txt`
+
+```vim
+cmake_minimum_required(VERSION 3.0.0)
+project(helloworld VERSION 0.1.0)
+
+include(CTest)
+enable_testing()
+
+add_executable(helloworld main.cpp)
+
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
+```
+
+> To build: Ctrl+Shift+P and run the CMake: Build
+> or select Build in tool bar
+
+Debug
+> To build: Ctrl+Shift+P and run the CMake: Debug, `cmake>=3.7.2`
+
+```bash
+cmake --version
+sudo apt remove cmake
+# here to download https://cmake.org/download/ move to /opt/
+chmod +x /opt/cmake-3.20.0-rc2-linux-x86_64.sh
+sudo bash /opt/cmake-3.20.0-rc2-linux-x86_64
+/opt/cmake-3.20.0-rc2-linux-x86_64/cmake --version
+sudo ln -s /opt/cmake-3.*your_version*/bin/* /usr/local/bin
+cmake --version
+```
+
+```
+cmake_minimum_required(VERSION 3.0.0) # Set the minimum required version of cmake for a project.
+project(helloworld VERSION 0.1.0) # Set a name for the entire project.
+
+include(CTest) # Load and run CMake code from a file or module.
+enable_testing() # Enable testing for current directory and below.
+
+add_executable(cmakeQuickStart main.cpp) # cmakeQuickStart: project name Add an executable to the project using the specified source files.
+
+set(CPACK_PROJECT_NAME ${PROJECT_NAME})
+set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
+include(CPack)
+```
+
+### Other useful in VS code
+
+- Code in github: add 1s after github, e.g.: <https://github1s.com/maiminh1996/YOLOv3-tensorflow>
+
+- Extensions:
+  - steoates.autoimport
+  - alefragnani.Bookmarks
+  - Bracket Pair Colorizer
+  - ms-vscode.cpptools
+  - austin.code-gnu-global
+  - streetsidesoftware.code-spell-checker
+  - Guyutongxue.cpp-reference
+  - tchojnacki.cpp-compile
+  - ms-azuretools.vscode-docker
+  - cschlosser.doxdocgen
+  - dracula-theme.theme-dracula
+  - mhutchie.git-graph
+  - donjayamanne.githistory
+  - GitHub.copilot
+  - wix.vscode-import-cost
+  - VisualStudioExptTeam.vscodeintellicode
+  - ms-toolsai.jupyter
+  - ms-toolsai.jupyter-keymap
+  - ms-toolsai.jupyter-renderers
+  - mathematic.vscode-latex
+  - torn4dom4n.latex-support
+  - James-Yu.latex-workshop
+  - nickfode.latex-formatter
+  - ritwickdey.LiveServer
+  - Tyriar.luna-paint
+  - yzane.markdown-pdf
+  - bierner.markdown-preview-github-styles
+  - DavidAnson.vscode-markdownlint
+  - nvidia.nsight-vscode-edition
+  - ms-python.vscode-pylance
+  - ms-python.python
+  - ms-vscode-remote.remote-containers
+  - ms-vscode-remote.remote-ssh
+  - ms-vscode-remote.remote-ssh-edit
+  - Shan.code-settings-sync
+  - foxundermoon.shell-format
+  - edwardhjp.vscode-author-generator
+  - kriegalex.vscode-cudacpp
+  - vscode-icons-team.vscode-icons
+  - eamodio.gitlens
+  - TabNine.tabnine-vscode
+
+### References
+
+1. <https://code.visualstudio.com/>
+2. <https://code.visualstudio.com/docs/python/debugging>
+3. <https://code.visualstudio.com/docs/cpp/config-linux>
+4. <https://cppdeveloper.com/c-nang-cao/ky-thuat-debug-tren-visual-studio/>
+5. <https://code.visualstudio.com/docs/cpp/cmake-linux>
+
+<!-- <https://blog.miguelgrinberg.com/post/visual-studio-code-for-python-developers> -->
