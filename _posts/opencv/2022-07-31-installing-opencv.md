@@ -4,10 +4,11 @@ title: "Installing OpenCV"
 subtitle: "OpenCV (Part 1)"
 date: 2022-07-31
 author: "MAI Minh"
-header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
+header-style: text
 catalog: true
 tags: [installing, opencv, image processing, computer vision]
-permalink: /posts/installing-opencv
+permalink: /distilled/opencv/installing-opencv.html
 katex: true
 mathjax: true
 ---

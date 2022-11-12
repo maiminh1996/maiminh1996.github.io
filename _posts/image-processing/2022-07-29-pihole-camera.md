@@ -5,10 +5,10 @@ subtitle: "Basic Geometry and 3D Understanding (Part 1)"
 date: 2022-07-29
 author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-style: text
 catalog: true
-# header-style: text
 tags: [image processing, camera, calibration]
-permalink: /distilled/pihole-camera.html
+permalink: /distilled/image-processing/pihole-camera.html
 katex: true
 mathjax: true
 ---

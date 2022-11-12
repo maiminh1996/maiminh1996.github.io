@@ -4,12 +4,13 @@ title: "Camera and LiDAR analysis for 3D object detection in foggy weather condi
 subtitle: "by Nguyen Anh Minh MAI, Pierre Duthon, Pascal Housam Salmane, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin."
 date: 2022-07-29
 author: "MAI Minh"
-# header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
+header-style: text
 catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-permalink: /publications/camera_lidar_analysis
+permalink: /publications/camera_lidar_analysis.html
 katex: true
 mathjax: true
 sidebar: false

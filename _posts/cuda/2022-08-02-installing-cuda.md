@@ -4,10 +4,11 @@ title: "Installing CUDA"
 subtitle: "GPGPU"
 date: 2022-08-02
 author: "MAI Minh"
-header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
+header-style: text
 catalog: true
 tags: [cuda, installing, gpgpu, deep learning]
-permalink: /posts/installing-cuda
+permalink: /distilled/cuda/installing-cuda.html
 katex: true
 mathjax: true
 ---

@@ -4,9 +4,10 @@ title: "Camera Calibration"
 subtitle: "Basic Geometry and 3D Understanding (Part 2)"
 date: 2022-07-31
 author: "MAI Minh"
-header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
+header-style: text
 tags: [camera, calibration]
-permalink: /posts/camera-calibration
+permalink: /distilled/image-processing/camera-calibration.html
 katex: true
 mathjax: true
 ---

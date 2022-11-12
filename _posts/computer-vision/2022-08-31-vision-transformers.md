@@ -4,9 +4,11 @@ title: "Vision Transformers"
 subtitle: ""
 date: 2022-08-31
 author: "MAI Minh"
-header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
 tags: [deep learning, computer vision, transformer]
-permalink: /posts/vision-transformers
+permalink: /distilled/computer-vision/vision-transformers.html
+katex: true
+mathjax: true
 ---
 
 Transformer: Attention Is All You Need [`NIPS 2017`](https://proceedings.neurips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf) [nlp]

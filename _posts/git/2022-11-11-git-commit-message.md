@@ -4,7 +4,7 @@ title: "git commit message"
 subtitle: "Rules to write commit message"
 date: 2022-11-11
 author: "MAI Minh"
-header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
 header-style: text
 tags: [git]
 catalog: true
@@ -12,10 +12,6 @@ permalink: /distilled/git/git-commit-message.html
 katex: true
 mathjax: true
 ---
-
-[ds](/test/minh.html)
-
-[ds](../../../test/minh.html)
 
 > Writing a helpful msg makes it easier to work well in the team and check the git log (history) later
 

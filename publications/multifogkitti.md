@@ -4,12 +4,13 @@ title: "3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions"
 subtitle: "by Nguyen Anh Minh MAI, Pierre Duthon, Louahdi Khoudour, Alain Crouzil, Sergio A. Velastin."
 date: 2022-07-29
 author: "MAI Minh"
-# header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
+header-img: "img/"
+header-style: text
 catalog: false
 no-catalog: true
 no-featured-tags: true
 header-style: text
-permalink: /publications/multifogkitti
+permalink: /publications/multifogkitti.html
 katex: true
 mathjax: true
 sidebar: false

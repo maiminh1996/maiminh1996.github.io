@@ -27,6 +27,7 @@ task :post do
     exit -1
   end
   filename = File.join(CONFIG['posts'], "#{date}-#{slug}.#{CONFIG['post_ext']}")
+  # filename = File.join(CONFIG['posts'], "#{slug}.#{CONFIG['post_ext']}")
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
@@ -39,8 +40,13 @@ task :post do
     post.puts "subtitle: \"#{subtitle.gsub(/-/,' ')}\""
     post.puts "date: #{date}"
     post.puts "author: \"MAI Minh\""
-    post.puts "header-img: \"img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg\""
+    post.puts "header-img: \"img/\""
+    post.puts "header-style: text"
     post.puts "tags: []"
+    post.puts "catalog: true"
+    post.puts "permalink: /distilled/\"#{title}\".html"
+    post.puts "katex: true"
+    post.puts "mathjax: true"
     post.puts "---"
   end
 end # task :post
