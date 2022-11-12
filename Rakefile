@@ -48,6 +48,7 @@ task :post do
     post.puts "katex: true"
     post.puts "mathjax: true"
     post.puts "---"
+    post.puts "<b>Last modified: <script>document.write( document.lastModified );</script>"
   end
 end # task :post
 
