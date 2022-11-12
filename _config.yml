@@ -28,7 +28,14 @@ linkedin_username:  nguyen-anh-minh-mai
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
 highlighter: rouge
 # permalink: pretty
-permalink: /:year/:month/:day/:title/
+# permalink: /:year/:month/:day/:title/
+# permalink: distilled/:title
+# permalink: /:title
+
+
+
+
+
 paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json", "README.vi.md", "README.md"]
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
@@ -103,17 +110,3 @@ page-mathjax: false
 page-katex: false
 
 
-
-
-
-# Friends
-# friends: [
-#     {
-#     #     title: "Nguyen Thi Thuy Ha",
-#     #     href: ""
-#     # },{
-        
-#     },{
-        
-#     }
-# ]

@@ -8,7 +8,7 @@ header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 catalog: true
 # header-style: text
 tags: [image processing, camera, calibration]
-permalink: /posts/pihole-camera
+permalink: /distilled/pihole-camera.html
 katex: true
 mathjax: true
 ---

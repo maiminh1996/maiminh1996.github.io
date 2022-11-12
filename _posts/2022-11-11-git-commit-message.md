@@ -8,10 +8,14 @@ header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 header-style: text
 tags: [git]
 catalog: true
-permalink: /distilled/git/git-commit-message
+permalink: /distilled/git/git-commit-message.html
 katex: true
 mathjax: true
 ---
+
+[ds](/test/minh.html)
+
+[ds](../../../test/minh.html)
 
 > Writing a helpful msg makes it easier to work well in the team and check the git log (history) later
 
