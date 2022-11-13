@@ -5,6 +5,7 @@ subtitle: ""
 date: 2022-08-31
 author: "MAI Minh"
 header-img: "img/"
+header-style: text
 tags: [deep learning, computer vision, transformer]
 permalink: /distilled/computer-vision/vision-transformers.html
 katex: true
