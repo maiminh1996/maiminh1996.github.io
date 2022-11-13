@@ -4,6 +4,8 @@ I am (CIFRE) Ph.D. candidate at [Paul Sabatier Toulouse III](https://www.univ-tl
 
 Back in the past, in 2019, I got my Diplôme d’Ingénieur (a parallel "Master 2" degree) at [National Institutes of Applied Sciences Centre-Val de Loire (INSA CVL)](https://www.groupe-insa.fr/en). I went through internships at [Mathematics, Image and Applications (MIA)](http://mia.univ-larochelle.fr/) lab (2018) supervised by Dr. [Christophe Saint-Jean](https://scholar.google.com/citations?user=qUEKhMUAAAAJ&hl=en), and at [French Alternative Energies and Atomic Energy Commission (CEA)](https://kalisteo.cea.fr/index.php/ai/) (2019) supervised by Dr. [Brice Burger](http://brice.burger.pagesperso-orange.fr/PageDaccueil.html?lang=en), Dr. [Mohamed Chaouch](https://www.researchgate.net/profile/Mohamed-Chaouch-2) both on the research topic of 2D object detection. Besides, I was also Research Scientist at [VinAI Research](https://www.vinai.io/) where I worked closely with [Mau Dzung](https://github.com/maudzung) and Dr. [Luu Khoa](https://scholar.google.com/citations?user=JPAl8-gAAAAJ&hl=en).
 
+**Contact**: mainguyenanhminh1996 AT gmail DOT com
+
 **Skills**: see **[Distilled Learning](distilled.html)**
 
 **My resume**: **[1-page resume](/docs/cv_Nguyen_Anh_Minh_MAI.pdf)**
