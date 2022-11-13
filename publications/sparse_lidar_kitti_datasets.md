@@ -11,10 +11,10 @@ no-catalog: true
 no-featured-tags: true
 header-style: text
 permalink: /publications/sparse_lidar_kitti_datasets.html
-katex: true
+# katex: true
 mathjax: true
 sidebar: false
-header-mask: 0.2
+# header-mask: 0.2
 hide-in-nav: true
 ---
 ### [[GitHub](https://github.com/maiminh1996/sparse_lidar_kitti_datasets)]

@@ -6,6 +6,7 @@ layout: default
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
+
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 
@@ -24,6 +25,8 @@ layout: default
                 {% if page.multilingual %}
                     {% include multilingual-sel.html %}
                 {% endif %}
+
+                
 
 				{{ content }}
 
@@ -96,16 +99,6 @@ layout: default
         </div>
     </div>
 </article>
-
-<!-- add support for mathjax by voleking-->
-{% if page.mathjax %}
-  {% include mathjax_support.html %}
-{% endif %}
-
-<!-- add support for katex-->
-{% if page.katex %}
-    {% include katex_support.html %}
-{% endif %}
 
 {% if site.netease_comment %}
 <!-- 网易云跟帖JS代码 start -->

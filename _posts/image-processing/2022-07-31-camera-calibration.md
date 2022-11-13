@@ -8,7 +8,7 @@ header-img: "img/"
 header-style: text
 tags: [camera, calibration]
 permalink: /distilled/image-processing/camera-calibration.html
-katex: true
+# katex: true
 mathjax: true
 ---
 

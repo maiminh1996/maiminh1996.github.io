@@ -8,7 +8,7 @@ header-img: "img/"
 header-style: text
 tags: [deep learning, computer vision, transformer]
 permalink: /distilled/computer-vision/vision-transformers.html
-katex: true
+# katex: true
 mathjax: true
 ---
 

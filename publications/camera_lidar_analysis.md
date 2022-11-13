@@ -11,10 +11,10 @@ no-catalog: true
 no-featured-tags: true
 header-style: text
 permalink: /publications/camera_lidar_analysis.html
-katex: true
+# katex: true
 mathjax: true
 sidebar: false
-header-mask: 0.2
+# header-mask: 0.2
 hide-in-nav: true
 ---
 ### [[Paper](https://ieeexplore.ieee.org/document/9854073)] [[GitHub](https://github.com/maiminh1996/camera_LiDAR_analysis)]

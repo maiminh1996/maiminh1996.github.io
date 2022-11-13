@@ -11,10 +11,10 @@ no-catalog: true
 no-featured-tags: true
 header-style: text
 permalink: /publications/sls-fusion.html
-katex: true
+# katex: true
 mathjax: true
 sidebar: false
-header-mask: 0.2
+# header-mask: 0.2
 hide-in-nav: true
 ---
 ### [[Paper](https://ieeexplore.ieee.org/document/9569023)] [[GitHub](https://github.com/maiminh1996/SLS-Fusion)]

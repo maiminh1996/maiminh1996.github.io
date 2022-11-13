@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% if page.mathjax %}
+    {% include mathjax_support.html %}
+{% endif %}
+
+{% if page.katex %}
+    {% include katex_support.html %}
+{% endif %}
+
 {% include head.html %}
 
 <!-- hack iOS CSS :active style -->

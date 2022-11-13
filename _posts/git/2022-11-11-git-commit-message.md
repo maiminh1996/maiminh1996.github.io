@@ -9,7 +9,7 @@ header-style: text
 tags: [git]
 catalog: true
 permalink: /distilled/git/git-commit-message.html
-katex: true
+# katex: true
 mathjax: true
 ---
 

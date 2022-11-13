@@ -9,17 +9,16 @@ header-style: text
 catalog: true
 tags: [installing, opencv, image processing, computer vision]
 permalink: /distilled/opencv/installing-opencv.html
-katex: true
+# katex: true
 mathjax: true
 ---
 
 <b>[Completed] Last modified: </b>
 <script>document.write( document.lastModified );</script>
 
-# Goal 
-> Installing OpenCV for both Python and C++ in Linux
+## Goal
 
-# Opencv
+> Installing OpenCV for both Python and C++ in Linux
 
 ## Installing
 
@@ -134,14 +133,17 @@ pip uninstall opencv-contrib-python
 sudo rm -rf /usr/local/lib/python3.6/dist-packages/cv2/
 ```
 
-# REFERENCES
-- [OpenCV Releases](https://opencv.org/releases.html)
-- [OpenCV Installation in Linux](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html#tutorial_linux_install_detailed_basic_download)
-- [How to Install OpenCV in Ubuntu 16.04 LTS for C / C++](http://www.codebind.com/cpp-tutorial/install-opencv-ubuntu-cpp/)
+## References
 
-# Notes
+1. [OpenCV Releases](https://opencv.org/releases.html)
+2. [OpenCV Installation in Linux](https://docs.opencv.org/4.x/d7/d9f/tutorial_linux_install.html#tutorial_linux_install_detailed_basic_download)
+3. [How to Install OpenCV in Ubuntu 16.04 LTS for C / C++](http://www.codebind.com/cpp-tutorial/install-opencv-ubuntu-cpp/)
 
-### What is `sudo ldconfig` in Linux
+## Appendix 
+
+### Errors
+
+- What is `sudo ldconfig` in Linux
 
 <https://www.quora.com/What-is-Sudo-Ldconfig-in-Linux>
 
@@ -149,7 +151,8 @@ sudo rm -rf /usr/local/lib/python3.6/dist-packages/cv2/
 
 **You usually use this if you get errors about some dynamically linked libraries not being found when starting a program although they are actually present on the system**. You might need to add their paths to `/etc/ld.so.conf` first, though.
 
-### Getting error: unable to locate package `libjasper-dev`
+- Getting error: unable to locate package `libjasper-dev`
+
 ```bash
 sudo add-apt-repository "deb http://security.ubuntu.com/ubuntu xenial-security main"
 sudo apt update

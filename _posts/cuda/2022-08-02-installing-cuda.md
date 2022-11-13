@@ -9,7 +9,7 @@ header-style: text
 catalog: true
 tags: [cuda, installing, gpgpu, deep learning]
 permalink: /distilled/cuda/installing-cuda.html
-katex: true
+# katex: true
 mathjax: true
 ---
 
@@ -104,7 +104,7 @@ The same installer may be offered in 2 versions: local and network.
 
 Check a `CUDA Toolkit` version requiements (replace X.Y by the cuda version https://docs.nvidia.com/cuda/archive/X.Y/cuda-installation-guide-linux/index.html#system-requirements) by seeing its [`Versioned Online Documentation`](https://developer.nvidia.com/cuda-toolkit-archive) (https://docs.nvidia.com/cuda/archive/X.Y/cuda-installation-guide-linux/index.html#pre-installation-actions) and then `Installation Guide for Linux` to check:
 - **CUDA-capable GPU**: `lspci | grep -i nvidia` (all card are listed in [cuda-gpus](https://developer.nvidia.com/cuda-gpus))
-- **A supported version of Linux**: `uname -m && cat /etc/*release` with a **gcc compiler**: `gcc --version` and toolchain. Ex:
+- **A supported version of Linux**: `uname -m && cat /etc/*release` with a **gcc compiler**: `gcc --version` and toolchain. e.g.:
   - cuda 11.0 supports for Ubuntu 20.04; Ubuntu 18.04.z (z<=4); Ubuntu 16.04 (z<=6)
   - however cuda 11.4.0  only supports for Ubuntu 20.04.2 LTS; Ubuntu 18.04.z (z <= 5) LTS
 - **Kernel**. It is best to manually ensure the correct version of the kernel headers and development packages are installed prior to installing the CUDA Drivers, as well as whenever you change the kernel version. The version of the kernel your system `uname -r`, install `sudo apt-get install linux-headers-$(uname -r)`
@@ -183,7 +183,7 @@ nvidia-smi # driver and the max cuda toolkit version may be installed using this
 [Which GPUs are supported by the driver](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
 ![](/img/gpu_driver.png)
 
-GPU (nom, HW generation, CC) --> Check driver supported (from oldest) --> Ex: GeForce RTX 3080 Ti (Ampere) --> Ampere --> driver >= 450.36.06 + any cuda version supported (see table below to choose the driver supported cuda version)
+GPU (nom, HW generation, CC) --> Check driver supported (from oldest) --> e.g.: GeForce RTX 3080 Ti (Ampere) --> Ampere --> driver >= 450.36.06 + any cuda version supported (see table below to choose the driver supported cuda version)
 - driver 450.36.06 + <= cuda 11.0.1 RC
 - driver 470.82.01 + <= cuda 11.4 update 4
 
@@ -261,10 +261,6 @@ sudo rm -rf /usr/local/cuda-X.Y/
 sudo apt-get --purge remove "*nvidia*" && sudo apt-get autoremove
 ```
 
-## Some successful configurations
-- GeForce GTX 1080 Ti/PCIe/SSE2: python3.6, Pytorch 1.0.2, cuda 10.0, driver nvidia-410, cudnn 7.4.2
-
-
 ## Multi cuda version on the one machine
 
 Switch cuda by create a symbolic link into `/usr/local/cuda`
@@ -280,7 +276,19 @@ export CUDA_HOME=/usr/local/cuda
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
 
-## Errors
+
+
+## References
+
+1. [CUDA Toolkit Documentation](https://docs.nvidia.com/cuda/)
+2. [MultiCUDA: Multiple Versions of CUDA on One Machine](https://medium.com/@peterjussi/multicuda-multiple-versions-of-cuda-on-one-machine-4b6ccda6faae)
+3. [Multiple Version of CUDA Libraries On The Same Machine](https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77)
+4. [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#cuda-general-purpose-parallel-computing-architecture)
+
+
+## Appendix
+
+### Errors
 
 - when cuda is false CUDA unavailable when pytorch 1.3.0
 
@@ -307,8 +315,5 @@ reboot
 sudo rm /etc/apt/sources.list.d/cuda-ubuntu1604-11-2-local.list
 ```
 
-# REFERENCES
-- [CUDA Toolkit Documentation](https://docs.nvidia.com/cuda/)
-- [MultiCUDA: Multiple Versions of CUDA on One Machine](https://medium.com/@peterjussi/multicuda-multiple-versions-of-cuda-on-one-machine-4b6ccda6faae)
-- [Multiple Version of CUDA Libraries On The Same Machine](https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77)
-- [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#cuda-general-purpose-parallel-computing-architecture)
+### Successful configs
+- GeForce GTX 1080 Ti/PCIe/SSE2: python3.6, Pytorch 1.0.2, cuda 10.0, driver nvidia-410, cudnn 7.4.2

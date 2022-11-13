@@ -11,10 +11,10 @@ no-catalog: true
 no-featured-tags: true
 header-style: text
 permalink: /publications/multifogkitti.html
-katex: true
+# katex: true
 mathjax: true
 sidebar: false
-header-mask: 0.2
+# header-mask: 0.2
 hide-in-nav: true
 ---
 ### [[Paper](https://www.mdpi.com/1424-8220/21/20/6711)] [[GitHub](https://github.com/maiminh1996/MultifogKITTI)]
