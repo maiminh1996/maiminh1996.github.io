@@ -122,7 +122,8 @@ https://github.com/kitian616/jekyll-TeXt-theme
         if (_tag === '' || typeof _tag !== 'string') {
           setUrlQuery();
         } else {
-          setUrlQuery('.html?tag=' + _tag);
+          // setUrlQuery('.html?tag=' + _tag);
+          setUrlQuery('?tag=' + _tag);
         }
       } else {
         buttonFocus(searchButtonsByTag(tag));
