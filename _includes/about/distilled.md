@@ -8,7 +8,7 @@
 
 ## Pay Attention
 
-> This is my distilled learning notes for referring later. It does not guarantee comprehensive knowledge, on another hand, it focuses specifically on my domain of knowledge and scope of study and work.
+> This is my distilled learning notes for referring later. It does not guarantee complete coverage, on another hand, it focuses specifically on my domain of knowledge and scope of study and work.
 
 ## Distilled Learning
 
