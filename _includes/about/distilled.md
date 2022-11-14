@@ -4,7 +4,15 @@
 </head>
 
 <!-- <body> -->
-## Knowledge
+
+
+## Pay Attention
+
+> This is my distilled learning notes for referring later. It does not guarantee comprehensive knowledge, on another hand, it focuses specifically on my domain of knowledge and scope of study and work.
+
+## Distilled Learning
+
+### Knowledge
 
 <div class="row">
     <a href="">
@@ -37,7 +45,7 @@
     </a>
 </div>
 
-## Programming Languages
+### Programming Languages
 
 <div class="row">
     <a href="">
@@ -80,7 +88,7 @@
 </div>
 
 
-## Frameworks
+### Frameworks
 
 <div class="row">
     <a href="">
@@ -151,7 +159,9 @@
     </a>
 </div>
 
-## Developer Tools
+[dsds](#└─other-notes)
+
+###  Developer Tools
 
 <div class="row">
     <a href="/distilled/git">
@@ -191,7 +201,7 @@
     </a>
 </div>
 
-## Operating Systems
+###  Operating Systems
 
 <!-- <div class="row">
     <div class="column">
@@ -209,7 +219,7 @@
     </a>
 </div>
 
-## Other notes
+### Other notes
 
 
 <script src='{{ "/js/distilled.js " | prepend: site.baseurl }}'></script>
