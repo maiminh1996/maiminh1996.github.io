@@ -53,8 +53,8 @@ If you want to work on sparse LiDAR, please refer [here](../sparse_lidar_kitti_d
 ### Citation
 If you find our work useful in your research, please consider citing:
   
-```
-@Article{nammai_sensors_2021,
+```txt
+@article{nammai_sensors_2021,
     AUTHOR = {Mai, Nguyen Anh Minh and Duthon, Pierre and Khoudour, Louahdi and Crouzil, Alain and Velastin, Sergio A.},
     TITLE = {3D Object Detection with SLS-Fusion Network in Foggy Weather Conditions},
     JOURNAL = {Sensors},
@@ -70,9 +70,9 @@ If you find our work useful in your research, please consider citing:
 }
 ```
 
-```
-@INPROCEEDINGS{nammai_icprs_2021,
-    author={Mai, N.-A.-M. and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
+```txt
+@inproceedings{nammai_icprs_2021,
+    author={Mai, Nguyen Anh Minh and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
     booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
     title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
     year={2021},
@@ -84,4 +84,4 @@ If you find our work useful in your research, please consider citing:
 
 ### Contact
 
-Any feedback is very welcome! Please contact us at <mainguyenanhminh1996@gmail.com>
+Any feedback is very welcome! Please contact us at mainguyenanhminh1996 AT gmail DOT com

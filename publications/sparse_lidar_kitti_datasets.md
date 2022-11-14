@@ -42,7 +42,7 @@ Sparse LiDAR extracted from LiDAR 64 beams
 ### Citation
 If you find our work useful in your research, please consider citing:
 
-```
+```txt
 @misc{Mai_My_Research_Sparse_2022,
     author = {Mai, Nguyen Anh Minh and Duthon, Pierre and Houssam SALMANE, Pascal and Khoudour, Louahdi and Crouzil, Alain and A. Velastin, Sergio},
     month = {8},
@@ -51,8 +51,8 @@ If you find our work useful in your research, please consider citing:
     year = {2022}
 ```
 
-```
-@INPROCEEDINGS{nammai_icprs_2021,
+```txt
+@inproceedings{nammai_icprs_2021,
     author={Mai, N.-A.-M. and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
     booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
     title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
@@ -65,4 +65,4 @@ If you find our work useful in your research, please consider citing:
 
 ### Contact
 
-Any feedback is very welcome! Please contact us at <mainguyenanhminh1996@gmail.com>
+Any feedback is very welcome! Please contact us at mainguyenanhminh1996 AT gmail DOT com

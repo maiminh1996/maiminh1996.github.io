@@ -34,17 +34,19 @@ The ability to accurately detect and localize objects is recognized as being the
 
 ### Citation
 If you find our work useful in your research, please consider citing:
-  
-    @INPROCEEDINGS{nammai_icprs_2021,
-        author={Mai, N.-A.-M. and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
-        booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
-        title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
-        year={2021},
-        volume={2021},
-        number={},
-        pages={150-156},
-        doi={10.1049/icp.2021.1442}}
+
+```txt
+@inproceedings{nammai_icprs_2021,
+    author={Mai, Nguyen Anh Minh and Duthon, P. and Khoudour, L. and Crouzil, A. and Velastin, S. A.},
+    booktitle={11th International Conference of Pattern Recognition Systems (ICPRS 2021)}, 
+    title={Sparse LiDAR and Stereo Fusion (SLS-Fusion) for Depth Estimation and 3D Object Detection}, 
+    year={2021},
+    volume={2021},
+    number={},
+    pages={150-156},
+    doi={10.1049/icp.2021.1442}}
+```
 
 ### Contact
 
-Any feedback is very welcome! Please contact us at <mainguyenanhminh1996@gmail.com>
+Any feedback is very welcome! Please contact us at mainguyenanhminh1996 AT gmail DOT com
