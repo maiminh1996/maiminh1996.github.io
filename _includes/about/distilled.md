@@ -1,11 +1,3 @@
-<!-- <html lang="en"> -->
-<head>
-    <link rel="stylesheet" href="{{ " /css/distilled.css" | prepend: site.baseurl }}">
-</head>
-
-<!-- <body> -->
-
-
 ## Pay Attention
 
 > This is my distilled learning notes for referring later. It does not guarantee complete coverage, on another hand, it focuses specifically on my domain of knowledge and scope of study and work.
@@ -203,12 +195,6 @@
 
 ###  Operating Systems
 
-<!-- <div class="row">
-    <div class="column">
-        <a href="../../distilled/test"><img src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/linux-box.svg"></a>
-    </div>
-</div> -->
-
 <div class="row">
     <a href="">
     <div class="column">
@@ -221,8 +207,18 @@
 
 ### Other notes
 
-
 <script src='{{ "/js/distilled.js " | prepend: site.baseurl }}'></script>
 
-<!-- </body>
-</html> -->
+
+
+<!-- <pre id="show-json-from-git"></pre>
+
+<script>
+var url = 'https://raw.githubusercontent.com/maiminh1996/maiminh1996.github.io/master/_includes/about/en.md';
+fetch(url)
+.then(res => res.text())
+.then((out) => {
+  document.getElementById("show-json-from-git").innerText = out
+})
+.catch(err => { throw err });
+</script> -->
