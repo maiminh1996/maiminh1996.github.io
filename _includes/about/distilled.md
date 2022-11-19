@@ -156,7 +156,7 @@
 ###  Developer Tools
 
 <div class="row">
-    <a href="/distilled/git">
+    <a href="/distilled/git.html">
     <div class="column">
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/git-box.svg">
     </div>
