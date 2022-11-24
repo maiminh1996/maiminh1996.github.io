@@ -20,21 +20,14 @@ We need to set `requires_grad = False/ True` for each param to be enable to upda
 - `requires_grad` is a flag, defaulting to false unless wrapped in a `nn.Parameter`, that allows for fine-grained exclusion of subgraphs from gradient computation.
 - `param.requires_grad = False` is the same as `params.requires_grad(False)`.
 
-It is also recommended to use `model.train()` when training and `model.eval()` when evaluating the model (validation/ testing). Some layers change state during validation/ testing phase compared to training phase:
-- `torch.nn.functional.dropout(p=0.5)`: during training, **randomly zeroes** some of the elements of the input tensor with probability $p$ using samples from a Bernoulli distribution.
-- `torch.nn.BatchNorm2d(C)`: `mean()`, `std()` calculated over [mini-batch](https://developers.google.com/machine-learning/glossary#mini-batch) $\gamma$ and $\beta$ are learnable parameter vectors of size C (where C is the input size). By default: $\gamma$=1, $\beta$=0. **During training this layer keeps running estimates of its computed mean and variance, which are then used for normalization during evaluation**.
+It is also recommended to use `model.train()` when training and `model.eval()` when evaluating the model (validation/ testing). Some layers like <a href="/distilled/glossary.html#dropout">dropout</a>, <a href="/distilled/glossary.html#batchnorm">batchnorm</a> change state during validation/ testing phase compared to training phase: 
 
-$$
-y = \frac{x - \mathrm{E}[x]}{\sqrt{\mathrm{Var}[x] + \epsilon}} *\gamma +\beta
-$$
 
-To show model's parameters:
 ```python
 import torch
 import torch.nn as nn
 import torchvision
 
-pretrained = torchvision.models.alexnet(pretrained=True)
 class Net(nn.Module):
     def __init__(self, pretrained_model):
         super(Net, self).__init__()
@@ -47,8 +40,13 @@ class Net(nn.Module):
         x = self.pretrained(x)
         x = self.add_layers(x)
         return x
-
+```
+To show model's parameters:
+```python
+pretrained = torchvision.models.alexnet(pretrained=True)
 net = Net(pretrained_model=pretrained)
+
+optimizer = ...
 
 for name, param in net.named_parameters():
     print('params: \t{}'.format(name))
@@ -103,6 +101,24 @@ for name, param in net.named_parameters():
 # params: 	add_layers.0.bias, 	gradient: True
 # params: 	add_layers.2.weight, 	gradient: True
 # params: 	add_layers.2.bias, 	gradient: True
+
+# Training
+net = net.train()
+for data, target in enumerate(trainLoader):
+    ...
+    output = net(data)
+    optimizer.zero_grad()
+    loss_train = ...
+    loss_train.backward()
+    optimizer.step() 
+# Validation
+net.eval()    
+with torch.no_grad():
+    for data, target in enumerate(trainLoader):
+        ...
+        output = net(data)
+        loss_val = ...
+        acc_val = ...
 ```
 
 ## References
