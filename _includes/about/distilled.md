@@ -2,11 +2,15 @@
 
 > This is my distilled learning notes for referring later. It does not guarantee complete coverage, on another hand, it focuses specifically on my domain of knowledge and scope of study and work.
 
-## Distilled Learning
+## Distilled Skill
 
 ### Knowledge
 
-<div class="row">
+[Data Structure](/distilled/data-structure.html), [Algorithm](/distilled/algorithm.html)
+
+[Computer Vision](/distilled/computer-vision.html), [Machine Learning](/distilled/machine-learning.html), [Deep Learning](/distilled/deep-learning.html)
+
+<!-- <div class="row">
     <a href="">
     <div class="column">
         <span title="Data structure notes"><img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/datastructure-box.svg"></span>
@@ -35,11 +39,15 @@
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/dl-box.svg">
     </div>
     </a>
-</div>
+</div> -->
 
 ### Programming Languages
 
-<div class="row">
+[Python](/distilled/python.html), [C++](/distilled/cpp.html), [C](/distilled/c.html), [Java](/distilled/java.html)
+
+[CUDA](/distilled/cuda.html), [Bash](/distilled/bash.html), [SQL](/distilled/sql.html)
+
+<!-- <div class="row">
     <a href="">
     <div class="column">
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/python-box.svg">
@@ -77,12 +85,16 @@
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/sql-box.svg">
     </div>
     </a>
-</div>
+</div> -->
 
 
 ### Frameworks
 
-<div class="row">
+[Pytorch](/distilled/pytorch.html), [Keras](/distilled/keras.html), [TensorFlow](/distilled/tensorflow.html)
+
+[OpenCV](/distilled/opencv.html), [Scikit-learn](/distilled/scikit-learn.html), [Numpy](/distilled/numpy.html), [Pandas](/distilled/pandas.html), [Matplotlib](/distilled/matplotlib.html)
+
+<!-- <div class="row">
     <a href="">
     <div class="column">
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/pytorch-box.svg">
@@ -149,13 +161,12 @@
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/ros-box.svg">
     </div>
     </a>
-</div>
-
-[dsds](#└─other-notes)
+</div> -->
 
 ###  Developer Tools
 
-<div class="row">
+[Git](/distilled/git.html), [Docker](/distilled/docker.html), [CMake](/distilled/cmake.html), [Vim](/distilled/vim.html), [VS Code](/distilled/vs-code.html), [Tmux](/distilled/tmux.html), [$\LaTeX$](/distilled/latex.html)
+<!-- <div class="row">
     <a href="/distilled/git.html">
     <div class="column">
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/git-box.svg">
@@ -191,19 +202,20 @@
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/latex-box.svg">
     </div>
     </a>
-</div>
+</div> -->
 
 ###  Operating Systems
 
-<div class="row">
+
+[Linux](/distilled/linux.html)
+
+<!-- <div class="row">
     <a href="">
     <div class="column">
-        <!-- <a href="/distilled/linux"> -->
         <img onmousemove="bigImg(this)" onmouseout="normalImg(this)" src="https://raw.githubusercontent.com/maiminh1996/icons/master/icons/linux-box.svg">
-        <!-- </a> -->
     </div>
     </a>
-</div>
+</div> -->
 
 ### Other notes
 

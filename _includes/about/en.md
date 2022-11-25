@@ -8,7 +8,7 @@ I am interested in Image Processing, Computer Vision (camera, LiDAR), Machine Le
 
 **Contact**: mainguyenanhminh1996 AT gmail DOT com
 
-**Skills**: see <a href="./distilled.html"><span style="color:red"><b>Distilled Learning Notes</b></span></a> or see <a href="./archive.html"><span style="color:red"><b>All Posts Archive</b></span></a>
+**Skills**: see <a href="./distilled.html"><span style="color:red"><b>Distilled Skill Notes</b></span></a> or see <a href="./archive.html"><span style="color:red"><b>All Posts Blog</b></span></a>
 
 **Publications**: see <a href="./publications.html"><span style="color:red"><b>Publication List</b></span></a>
 
