@@ -6,7 +6,7 @@
 
 ### Knowledge
 
-[Data Structure](/distilled/data-structure.html), [Algorithm](/distilled/algorithm.html)
+[Data Structure](/distilled/data-structure.html), [Algorithm](/distilled/algorithm.html), [Math](/distilled/math.html)
 
 [Computer Vision](/distilled/computer-vision.html), [Machine Learning](/distilled/machine-learning.html), [Deep Learning](/distilled/deep-learning.html)
 
