@@ -12,7 +12,7 @@ permalink: /distilled/loss-function.html
 # katex: true
 mathjax: true
 ---
-<b>Last modified: <script>document.write( document.lastModified );</script>
+<!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 
 
 Some basic loss defined in pytorch. Sometimes loss definition in `torch.nn` (`nn`) and `torch.nn.functional` (`F`) can confuse us.

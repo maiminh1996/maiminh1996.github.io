@@ -12,7 +12,7 @@ permalink: /distilled/data-structure/python-data-structure.html
 # katex: true
 mathjax: true
 ---
-<b>Last modified: <script>document.write( document.lastModified );</script>
+<!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 
 
 ## Built-in data structure

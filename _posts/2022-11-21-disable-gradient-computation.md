@@ -12,7 +12,7 @@ permalink: /distilled/pytorch/disable-gradient-computation.html
 # katex: true
 mathjax: true
 ---
-<b>Last modified: <script>document.write( document.lastModified );</script>
+<!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 
 ## Freeze a specific layer to update its weights/ bias
 

@@ -13,7 +13,7 @@ permalink: /distilled/python/google-colab.html
 mathjax: true
 ---
 
-<b>Last modified: <script>document.write( document.lastModified );</script>
+<!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 
 ## Magic command
 
