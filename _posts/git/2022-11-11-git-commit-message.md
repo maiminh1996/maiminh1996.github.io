@@ -18,7 +18,9 @@ mathjax: true
 ## Commit structure
 
 ```txt
-git commit -m "<type>[optional scope]: <description> [optionals]"
+git commit -m "<msg>"
+git commit # open editor to write commit msg
+# "<type>[optional scope]: <description> [optionals]"
 ```
 
 ### type and description
