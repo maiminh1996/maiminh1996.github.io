@@ -47,9 +47,29 @@ plugins: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 # markdown: maruku
 markdown: kramdown
+highlighter: rouge
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+  # input: GFM                            # use Github Flavored Markdown !important
+  # syntax_highlighter_opts:
+  #   span:
+  #     line_numbers: false
+  #   block:
+  #     line_numbers: true
+  #     start_line: 1
+  # input: GFM
+  # enable_coderay: false
+  # coderay_line_numbers: inline
+  # coderay_css: class
+  input:          GFM
+  # https://github.com/jekyll/jekyll/pull/4090
+  syntax_highlighter: rouge
+
+  # Rouge Highlighter in Kramdown › http://kramdown.gettalong.org/syntax_highlighter/rouge.html
+  # span, block element options fall back to global
   syntax_highlighter_opts:
+    # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: 'highlight'
+    #line_numbers: true # bad idea, spans don't need linenos and would inherit this option
     span:
       line_numbers: false
     block:
@@ -74,7 +94,7 @@ ga_domain: maiminh1996.github.io/
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "Nguyen Anh Minh MAI<br>PhD candidate | AI Research Engineer"
+sidebar-about-description: "Nguyen Anh Minh MAI<br>PhD in CS | AI Research Engineer"
 sidebar-avatar: https://avatars.githubusercontent.com/u/34424334?v=4 # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags

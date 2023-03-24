@@ -1,5 +1,11 @@
 ### Publications
 
+**3D Object Detection for Self-Driving Cars Using Video and LiDAR: An Ablation Study**<br>
+[Pascal Housam Salmane](https://scholar.google.fr/citations?hl=fr&user=yvLitLEAAAAJ&view_op=list_works&sortby=pubdate), [Josué Manuel Rivera Velázquez](), [Louahdi Khoudour](https://www.researchgate.net/profile/Louahdi-Khoudour), *Nguyen Anh Minh Mai, [Pierre Duthon](https://www.researchgate.net/profile/Pierre-Duthon), [Alain Crouzil](https://www.irit.fr/~Alain.Crouzil/), [Guillaume Saint Pierre](https://scholar.google.com/citations?user=ie1tJxsAAAAJ&hl=en&oi=ao), [Sergio A. Velastin](https://scholar.google.com/citations?user=FsE86kwAAAAJ&hl=en)*<br>
+SENSORS, DOI: [10.3390/s23063223](https://doi.org/10.3390/s23063223)<br>
+[[BibTex](../../docs/mai_sensors_2023.txt)] [[Project page]()]
+
+
 **Camera and LiDAR analysis for 3D object detection in foggy weather conditions**<br>
 *Nguyen Anh Minh Mai, [Pierre Duthon](https://www.researchgate.net/profile/Pierre-Duthon), [Pascal Housam Salmane](https://scholar.google.fr/citations?hl=fr&user=yvLitLEAAAAJ&view_op=list_works&sortby=pubdate), [Louahdi Khoudour](https://www.researchgate.net/profile/Louahdi-Khoudour), [Alain Crouzil](https://www.irit.fr/~Alain.Crouzil/), [Sergio A. Velastin](https://scholar.google.com/citations?user=FsE86kwAAAAJ&hl=en)*<br>
 ICPRS 2022, DOI: [10.1109/ICPRS54038.2022.9854073](https://ieeexplore.ieee.org/document/9854073), HAL: [hal-03820137](https://hal.archives-ouvertes.fr/hal-03820137/)<br>
