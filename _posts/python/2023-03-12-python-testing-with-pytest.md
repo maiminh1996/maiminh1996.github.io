@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Python testing with pytest"
-# subtitle: "This is a subtitle"
+subtitle: "Streamlining Python Testing with Pytest: A Guide to Writing Automated Tests"
 date: 2023-03-12
 author: "MAI Minh"
 header-img: "img/"
@@ -14,13 +14,19 @@ mathjax: true
 ---
 <!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 
-Two popular testing frameworks in Python are `unittest` and `pytest`. While `unittest` is a solid testing framework that comes with the Python standard library, `pytest` offers a more modern and flexible approach to testing that can save you time and effort in the long run. `pytest`: more concise and expressive, automatic test discovery, reused across multiple test cases, etc.
+### Introduction
+
+Testing frameworks play an important role in software development, allowing developers to write automated tests that can quickly and reliably check whether their code is working as expected. In Python, two popular testing frameworks are `unittest` and `pytest`. While `unittest` is a solid testing framework that comes with the Python standard library, `pytest` offers a more modern and flexible approach to testing (more concise and expressive, automatic test discovery, reused across multiple test cases, etc.) that can save time and effort in the long run.
+
+### Code example
+
+To demonstrate how pytest works, let's start by setting up a simple directory structure. We'll create a directory called calculator that contains a Python module called arithmetic.py, which defines several arithmetic functions, and a directory called testing that contains a Python test module called test_calculator.py.
 
 ```bash
 $ tree
 ├── calculator
 │   ├── __init__.py
-│   └── arithmetic.py
+       └── arithmetic.py
 └── testing
     ├── __init__.py
     └── test_calculator.py
@@ -66,11 +72,13 @@ def test_add():
     assert arithmetic.add(-1, -1) == -2
 ```
 
-By executing `pytest`, it searches for all the test functions `test_*` in the current root directory `./` that be defined any `*_test.py` or `test_*.py`, and runs them as test cases.
+To run the tests using `pytest`, we simply need to execute the following command from the command line:
 
 ```bash
 $ pytest
 ```
+
+`pytest` will automatically search for all the test functions `test_*` that are defined in any `*_test.py` or `test_*.py` files in the current root directory `./`, and run them as test cases. In this case, it will find *test_calculator.py* and execute the *test_add function*, which checks that the add function from *arithmetic.py* works correctly.
 
 Alternatively, we can run `pytest`inside VS Code as follow (`ms-python.python` extension + `pytest` package):
 
@@ -79,4 +87,6 @@ In *Testing* (*Activiry Bar*): *Configure Python Tests* > *pytest* > *. Root dir
 - Show output (`Ctrl+; Ctrl+O`)
 - Set break point to debug on failure cases.
 
+### Conclusion
 
+In summary, pytest offers a more modern and flexible approach to testing in Python, making it easier and faster to write and run automated tests. By following this simple example, you can start using pytest in your own projects and see the benefits for yourself.
