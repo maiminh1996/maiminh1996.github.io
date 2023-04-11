@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Python testing with pytest"
+title: "Python Testing with pytest"
 subtitle: "Streamlining Python Testing with Pytest: A Guide to Writing Automated Tests"
 date: 2023-03-12
 author: "MAI Minh"

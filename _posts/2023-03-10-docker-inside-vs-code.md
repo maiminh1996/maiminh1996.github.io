@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Docker inside VS Code"
-subtitle: "Running and debugging Python in Docker with Visual Studio Code"
+subtitle: "Running and Debugging Python in Docker with Visual Studio Code"
 date: 2023-03-10
 author: "MAI Minh"
 header-img: "img/"
@@ -13,14 +13,15 @@ permalink: /distilled/ide/docker-inside-vs-code.html
 mathjax: true
 ---
 
+### Introduction
 
 Developers often use Docker to build, ship, and run applications in a consistent environment. And the integration of Docker with VSCode provides a streamlined development experience for them. In this article, we'll show you how to use Docker within VS Code to build, run, and debug Python applications.
 
-Contents
+<!-- Contents
 - [Installing the necessary extensions](#installing-the-necessary-extensions)
 - [Building and running a Docker container](#building-and-running-a-docker-container)
 - [Debugging inside Docker container](#debugging-inside-docker-container)
-- [Conclusion](#conclusion)
+- [Conclusion](#conclusion) -->
 
 ### Installing the necessary extensions
 
