@@ -10,8 +10,8 @@ My research interests include Image Processing, Computer Vision (cameras, Lidar)
 
 **Contact**: mainguyenanhminh1996 AT gmail DOT com
 
-**Skills**: see <a href="./distilled.html"><span style="color:red"><b>Distilled Skill Notes</b></span></a> or see <a href="./archive.html"><span style="color:red"><b>All Posts Blog</b></span></a>
+**Publications**: &rarr; <a href="./publications.html"><span style="color:red"><b>Publication List</b></span></a>
 
-**Publications**: see <a href="./publications.html"><span style="color:red"><b>Publication List</b></span></a>
+**Blog**: &rarr; <a href="./archive.html"><span style="color:red"><b>All Posts Blog</b></span></a>
 
 **My resume**: **[1-page resume](/docs/cv_Nguyen_Anh_Minh_MAI.pdf)**
