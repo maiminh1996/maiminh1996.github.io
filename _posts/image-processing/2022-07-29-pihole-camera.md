@@ -13,8 +13,8 @@ permalink: /distilled/image-processing/pihole-camera.html
 mathjax: true
 ---
 
-<b>[Completed] Last modified: </b>
-<script>document.write( document.lastModified );</script>
+<!-- <b>[Completed] Last modified: </b>
+<script>document.write( document.lastModified );</script> -->
 
 ## Goal
 

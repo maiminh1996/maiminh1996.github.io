@@ -13,8 +13,8 @@ permalink: /distilled/opencv/installing-opencv.html
 mathjax: true
 ---
 
-<b>[Completed] Last modified: </b>
-<script>document.write( document.lastModified );</script>
+<!-- <b>[Completed] Last modified: </b>
+<script>document.write( document.lastModified );</script> -->
 
 ## Goal
 
