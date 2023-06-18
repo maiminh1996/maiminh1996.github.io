@@ -29,14 +29,19 @@ git clone https://github.com/opencv/opencv_contrib
 # ls -s opencv_contrib-3.4.16 opencv_contrib
 
 echo "***** 4. Building and Installing OpenCV *****"
-cd opencv
+# cd ~/opencv/ && git checkout 3.4.16
+cd ~/opencv/ && git checkout $1
+cd ~/opencv_contrib/ && git checkout $1
+# Change to a specific version. e.g. 3.4.16
+# git checkout 3.4
+cd ~/opencv/
 mkdir -p build && cd build
-# cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=/opt/opencv_contrib/modules /opt/opencv/
 cmake -D BUILD_TIFF=ON -D WITH_CUDA=OFF -D ENABLE_AVX=OFF -D WITH_OPENGL=OFF -D WITH_OPENCL=OFF -D WITH_IPP=OFF -D WITH_TBB=ON -D BUILD_TBB=ON -D WITH_EIGEN=OFF -D WITH_V4L=OFF -D WITH_VTK=OFF -D BUILD_TESTS=OFF -D BUILD_PERF_TESTS=OFF -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules ~/opencv/
 # run from this cmd if /opencv/build/Makefile exited
 # git pull
 make -j$(nproc --all) # jcore check cores: grep 'cpu cores' /proc/cpuinfo | uniq hoac nproc --all
 # make -j4
+
 echo "***********************************"
 sudo make install
 echo "***********************************"
@@ -45,6 +50,3 @@ echo "***********************************"
 sudo ldconfig
 echo "***** Finished *****"
 pkg-config --modversion opencv # check opencv version
-# exit
-# cd ~
-# echo "***** finished *****"
