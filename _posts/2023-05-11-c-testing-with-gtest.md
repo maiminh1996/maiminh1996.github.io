@@ -13,12 +13,55 @@ permalink: /distilled/c-testing-with-gtest.html
 mathjax: true
 ---
 
+[Introduction](#introduction)<br>
+[Why use GTest?](#why-use-gtest)<br>
+[Getting started with GTest](#getting-started-with-gtest)<br>
+├─ [Installation](#installation)<br>
+├─ [Simple GTest example](#simple-gtest-example)<br>
+├─ [Setting up GTest with CMake](#setting-up-gtest-with-cmake)<br>
+├─ [Writing unit tests](#writing-unit-tests)<br>
+&ensp;&nbsp;&nbsp;&nbsp;&nbsp;├─ [Test Fixture](#test-fixture)<br>
+&ensp;&nbsp;&nbsp;&nbsp;&nbsp;└─ [Test Cases](#test-cases)<br>
+└─ [Building and running tests](#building-and-running-tests)<br>
+[Writing effective tests with GTest](#writing-effective-tests-with-gtest)<br>
+[Conclusion](#conclusion)<br>
+[References](#references)
+
+---
 
 ### Introduction
 
-Unit testing is an essential practice in software development that helps ensure the correctness and reliability of individual units or components of code. In C++, one popular unit testing framework is Google Test, also known as GTest. In this blog post, we will explore how to set up and use GTest for writing unit tests in C++.
+Unit testing is an essential practice in software development that helps ensure the correctness and reliability of individual units or components of code. In C++, one popular unit testing framework is Google Test, also known as `GTest`. In this blog post, we will explore how to set up and use GTest for writing unit tests in C++.
 
-### Simple gtest example
+### Why use GTest?
+
+GTest offers several advantages:
+- **Comprehensive Assertions**: wide range of *assertion macros*, easily test various conditions, such as equality, inequality, exception throwing, and more.
+- **Fixture Support**: *test fixtures*, avoid redundant code and ensures a clean testing environment.
+- **Parameterized Tests**: *parameterized tests*, run the same test logic with different input values.
+- **Test Discovery**: automatically discovers and runs all tests without manual registration.
+
+### Getting started with GTest
+
+#### Installation
+
+Install GTest:
+```bash
+# Download gtest into /usr/src/gtest
+sudo apt-get install libgtest-dev 
+sudo apt-get install cmake
+
+# Build gtest
+cd /usr/src/gtest
+sudo cmake CMakeLists.txt
+sudo make
+
+# Make the lib file accessible from a standard library search path
+sudo ln -s /usr/src/gtest/lib/libgtest.a /usr/lib/libgtest.a
+sudo ln -s /usr/src/gtest/lib/libgtest_main.a /usr/lib/libgtest_main.a
+```
+
+#### Simple GTest example
 
 Let's begin by examining the project structure required to integrate GTest into a C++ project. Here's an example project structure:
 
@@ -94,6 +137,11 @@ unsigned long long factorial(unsigned int n) {
 }
 ```
 
+
+#### Setting up GTest with CMake
+
+Before we dive into writing unit tests, we need to set up GTest with our C++ project using CMake. Below is a `CMakeLists.txt` and `tests/CMakeLists.txt` files that configures the GTest framework and builds our test executable.
+
 ```cmake
 # CMakeLists.txt
 cmake_minimum_required(VERSION 3.5)
@@ -110,19 +158,6 @@ add_subdirectory(src)
 add_subdirectory(tests) # THIS IS WHERE WE BUILD OUR TESTS
 ```
 
-Install `gtest`:
-```bash
-# Download gtest into /usr/src/gtest
-sudo apt-get install libgtest-dev 
-sudo apt-get install cmake
-# Build gtest
-cd /usr/src/gtest
-sudo cmake CMakeLists.txt
-sudo make
-# Make the lib file accessible from a standard library search path
-sudo ln -s /usr/src/gtest/lib/libgtest.a /usr/lib/libgtest.a
-sudo ln -s /usr/src/gtest/lib/libgtest_main.a /usr/lib/libgtest_main.a
-```
 
 ```cmake
 # tests/CMakeLists.txt
@@ -160,8 +195,13 @@ target_include_directories(project_test # target project_test from add_subdirect
                                 )
 ```
 
-In order to create unit tests using `GTest`, we generate a `main.cpp` file within the tests directory. This process involves explicitly registering test cases and suites, typically achieved through the use of macros. In gtest, a test suite (`TestSuite`) is a collection of related test cases (`TestCase`), while a test case is an individual test scenario or unit of testing within a test suite. Below is an illustration of the `tests/main.cpp` file as an example:
+#### Writing unit tests
 
+In order to create unit tests using GTest, we create a `tests/main.cpp` file. This process involves explicitly registering *test cases* and *test suites*, typically achieved through the use of macros. In GTest, a test suite (`TestSuite`) is a collection of related test cases (`TestCase`), while a test case is an individual test scenario or unit of testing within a test suite. Below is an illustration of the `tests/main.cpp` file as an example:
+
+##### Test Fixture
+
+We start by creating a test fixture, which allows us to set up common objects and data used by multiple test cases. In this example, we'll create a fixture for the Arithmetic class.
 ```c++
 // tests/main.cpp
 #include <gtest/gtest.h>
@@ -175,7 +215,14 @@ protected:
     Arithmetic result;
 };
 
-// TEST_F macro is used to define a test case within a test fixture
+```
+##### Test Cases
+
+Next, we write test cases within the test fixture to verify the functionality of the Arithmetic class methods.
+- *TEST_F macro* is used to define a test case within a test fixture.
+- *TEST macro* is used to define a standalone test case without a test fixture.
+
+```c++
 // Test case for the add method
 TEST_F(ArithmeticTest, AddTest) {
     ASSERT_EQ(result.add(2, 3), 5);
@@ -188,17 +235,16 @@ TEST_F(ArithmeticTest, MultiplyTest) {
     ASSERT_EQ(result.multiply(3, 10), 30);
 }
 
-// TEST macro is used to define a standalone test case without a test fixture
+// Standalone test case for the factorial function from module2.h
 TEST(Module2TestSuite, FactorialTest){
     ASSERT_EQ(factorial(4), 24);
     ASSERT_EQ(factorial(0), 1);
 }
 ```
 
-Check [GTest Testing Reference](http://google.github.io/googletest/reference/testing.html) to see gtest syntax.
 
-
-Build and run the tests:
+#### Building and running tests
+After writing the test cases, we build and run the tests as follows:
 ```bash
 mkdir build
 cd build
@@ -225,13 +271,25 @@ int Arithmetic::multiply(int a, int b) {
 }
 ```
 
-Build and test again:
+Build and run the tests again:
 ```bash
 cd build && make
 cd .. && ./results/bin/project_test 
 ```
 ![](../img/gtest_output2.png)
 
+All tests pass, it indicates that the functionality of the Arithmetic class and the factorial function (from `module2.h`) are working correctly.
+
+
+### Writing effective tests with GTest
+
+To write effective tests using GTest, consider the following best practices:
+- **Test Naming**: use descriptive and meaningful names for your test functions to clearly indicate the purpose of each test.
+- **Test Independence**: ensure that each test is independent and does not rely on the state or outcome of other tests.
+- **Fixture Usage**: use fixtures to set up common resources or test contexts, and tear them down after the test is complete.
+- **Assertions**: use appropriate assertion macros for different test conditions to ensure your tests cover various scenarios.
+
+Check out [Advanced GoogleTest Topics](https://github.com/google/googletest/blob/main/docs/advanced.md) or [GTest Testing Reference](http://google.github.io/googletest/reference/testing.html) to see more about advanced Features of GTest such as *typed tests*, [*death tests*](https://github.com/google/googletest/blob/main/docs/advanced.md#death-tests), *test event listeners*, etc.
 
 ### Conclusion
 
@@ -239,7 +297,8 @@ Unit testing is crucial for ensuring the quality and correctness of software pro
 
 ### References
 
-1. [GoogleTest User’s Guide](http://google.github.io/googletest/)
+1. GoogleTest User's Guide: [google.github.io/googletest](http://google.github.io/googletest/)
+
 
 <!-- https://cppdeveloper.com/tutorial/unit-test-voi-google-test-gtest-tren-linux/ -->
 <!-- ### Errors
