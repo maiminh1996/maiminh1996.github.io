@@ -12,15 +12,34 @@ permalink: /distilled/python/python-testing-with-pytest.html
 # katex: true
 mathjax: true
 ---
-<!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
+
+[Introduction](#introduction)<br>
+[Why pytest?](#why-pytest)<br>
+[Getting started with pytest via an example](#getting-started-with-pytest-via-an-example)<br>
+├─ [pytest in command line](#pytest-in-command-line)<br>
+└─ [pytest in VS Code](#pytest-in-vs-code)<br>
+[Writing effective test cases](#writing-effective-test-cases)<br>
+[Conclusion](#conclusion)<br>
+[References](#references)<br>
+[Appendix](#appendix)<br>
+└─ [Error keywords in Python](#error-keywords-in-python)
+
+---
 
 ### Introduction
 
 Testing frameworks play an important role in software development, allowing developers to write automated tests that can quickly and reliably check whether their code is working as expected. In Python, two popular testing frameworks are `unittest` and `pytest`. While `unittest` is a solid testing framework that comes with the Python standard library, `pytest` offers a more modern and flexible approach to testing (more concise and expressive, automatic test discovery, reused across multiple test cases, etc.) that can save time and effort in the long run.
 
-### Simple pytest example
+### Why pytest?
 
-To demonstrate how pytest works, let's start by setting up a simple directory structure. We'll create a directory called calculator that contains Python modules called `module1.py` and `module2.py`, which defines several math functions, and a directory called `tests/` that contains Python test modules called `test_module1.py`, `test_module2.py`.
+pytest offers several advantages:
+- **Simplicity**: concise syntax and easy to understand.
+- **Rich Set of Features**: assertion methods, fixture management, test discovery, and test parameterization.
+- **Integration and Extensibility**: support test coverage, plugins for test reporting, and compatibility with continuous integration systems.
+
+### Getting started with pytest via an example
+
+To demonstrate how pytest works, let's start by setting up a simple python project. We create a directory called mymath that contains Python modules called `module1.py` and `module2.py`, which defines several math functions, and a directory called `tests/` that contains Python test modules called `test_module1.py`, `test_module2.py`.
 
 ```bash
 $ tree
@@ -123,7 +142,7 @@ def test_factorial_int():
 ```
 
 Check [PyTest how to write and report assertions in tests](https://docs.pytest.org/en/7.3.x/how-to/assert.html) or [PyTest API reference](https://docs.pytest.org/en/7.1.x/reference/reference.html) (such as approx, fail, skip, raises, warns, etc.) to know how to write test cases.
-#### pytest in command line
+##### pytest in command line
 Install `pytest`:
 ```bash
 pip install -U pytest
@@ -162,7 +181,7 @@ Then rerun `pytest` and it will report 3 passing test and show:
 Note that if a test case fails or raises an exception, `pytest` might stop executing further test cases. Fixing the failures or errors might allow `pytest` to proceed with running the remaining test cases.
 
 
-#### pytest in VS Code
+##### pytest in VS Code
 
 Alternatively, we can run `pytest`inside VS Code as follow (`ms-python.python` extension + `pytest` package):
 
@@ -173,15 +192,27 @@ In <kbd>Testing</kbd> (<kbd>Activiry Bar</kbd>): <kbd>Configure Python Tests</kb
 
 ![](../../img/pytest_vscode.png)
 
+### Writing effective test cases
+
+To write effective test cases with pytest, consider the following best practices:
+- Test Naming: Use descriptive and meaningful names for your test functions to clearly convey their purpose and expected behavior.
+- Assertion Methods: assertion methods, such as assert, assertEqual, assertRaises.
+- Test Organization: test cases into logical groups, pytest markers and tags.
+- Fixtures: pytest fixtures.
+
+Check out some advanced pytest features such as [parametrized tests](https://docs.pytest.org/en/7.3.x/how-to/parametrize.html), [test discovery](https://docs.pytest.org/en/7.1.x/example/pythoncollection.html), mocking and patching.
+
+In addition, pytest can integrate with other tools and frameworks such as CI, test coverage, test reporting.
+
 ### Conclusion
 
 In summary, pytest offers a more modern and flexible approach to testing in Python, making it easier and faster to write and run automated tests. By following this simple example, you can start using pytest in your own projects and see the benefits for yourself.
 
 ### References
 
-1. [PyTest docs](https://docs.pytest.org)
-2. [PyTest how to write and report assertions in tests](https://docs.pytest.org/en/7.3.x/how-to/assert.html)
-3. [PyTest API reference](https://docs.pytest.org/en/7.1.x/reference/reference.html)
+1. PyTest docs [docs.pytest.org](https://docs.pytest.org)
+2. PyTest how to write and report assertions in tests [docs.pytest.org/en/7.3.x/how-to/assert.html](https://docs.pytest.org/en/7.3.x/how-to/assert.html)
+3. PyTest API reference [docs.pytest.org/en/7.1.x/reference/reference.html](https://docs.pytest.org/en/7.1.x/reference/reference.html)
 
 ### Appendix
 
