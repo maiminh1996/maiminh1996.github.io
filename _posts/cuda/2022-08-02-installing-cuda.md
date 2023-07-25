@@ -1,319 +1,407 @@
 ---
 layout: post
 title: "Installing CUDA"
-subtitle: "GPGPU"
+subtitle: "Build and Run Deep Learning-based Programs"
 date: 2022-08-02
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
 catalog: true
-tags: [cuda, installing, gpgpu, deep learning]
+tags: [cuda, installing, deep learning]
 permalink: /distilled/cuda/installing-cuda.html
-# katex: true
 mathjax: true
 ---
 
-<b>[Completed] Last modified: </b>
-<script>document.write( document.lastModified );</script>
 
+[Introduction](#introduction)<br>
+[Preinstall](#preinstall)<br>
+[Install](#install)<br>
+├─ [NVIDIA graphics driver](#nvidia-graphics-driver)<br>
+├─ [CUDA Toolkit (CUDA)](#cuda-toolkit-cuda)<br>
+└─ [cuDNN](#cudnn)<br>
+[Upgrade](#upgrade)<br>
+[Uninstall](#uninstall)<br>
+[Multi CUDA version](#multi-cuda-version-on-one-machine)<br>
+[Conclusion](#conclusion)<br>
+[References](#references)<br>
+[Glossary](#glossary)<br>
+[Appendix](#appendix)
 
-# CUDA
+---
 
-## Direct link
-- [CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive)
-- [Table 3. CUDA Toolkit and Corresponding Driver Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#title-new-features)
-- [NVIDIA Driver Downloads](https://www.nvidia.com/Download/index.aspx?lang=en-us)
-- [cuDNN Archive](https://developer.nvidia.com/rdp/cudnn-archive)
+### Introduction
 
+In this guide, we will lead you through the essential steps to set up a deep learning-based application, which involves installing NVIDIA GPUs, CUDA, and cuDNN. Additionally, we'll explore how to upgrade your CUDA environment and even demonstrate how to manage multiple CUDA versions on a single machine for maximum flexibility and efficiency.
 
-## Some terms
-### CUDA Compilers: nvcc
+### Preinstall
 
-### CUDA Developer Tools
-- nvprof and Visual Profiler
-- CUPTI
-- Nsight Compute
-- Compute Sanitizer
-- CUDA-GDB
+Let's perform some pre-installation checks about system, GPU device, its [*compute capability*](#compute-capability) to ensure that our system meets the necessary [requirements](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions):
 
-### CUDA Libraries
-ex (11.x releases.)
-- cuBLAS Library
-- cuFFT Library
-- cuRAND Library
-- cuSOLVER Library
-- cuSPARSE Library
-- Math Library
-- NVIDIA Performance Primitives (NPP)
-- nvJPEG Library
-
-### [GPUs architecture and Compute Capability](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#compute-capabilities)
-The compute capability of a device is represented by a version number, also sometimes called its "SM version" (SM: Streaming multiprocessors). This version number identifies the features supported by the GPU hardware and is used by applications at runtime to determine which hardware features and/or instructions are available on the present GPU. 
-
-List NVIDIA GPUs architecture Compute Capability: 
-- Tesla (2006) --> CC: 1.x
-- Fermi (2010) --> CC: 2.x
-- Kepler (2012) --> CC: 3.x
-- Maxwell (2014) --> CC: 5.x
-- Pascal (2016) --> CC: 6.x
-- Volta (2018) --> CC: 7.x
-- Turing (late 2018), an incremental update based on the Volta architecture. --> CC: 7.5
-- Ampere (2020) --> CC: 8.x
-- Hopper (2022) --> CC: 9.x
-
-Check NVIDIA GPU **Compute Capability**
-- [Latest NVIDIA GPU](https://developer.nvidia.com/cuda-gpus)
-- [Older NVIDIA GPU](https://developer.nvidia.com/cuda-legacy-gpus)
-- Example: some gpus that I used
-  - GeForce: GeForce RTX 2070 (Turing) --> : 7.5; GeForce GTX 1080 Ti (pascal) --> 6.1; GeForce RTX 3080 Ti (Ampere) --> 8.6
-  - NVIDIA Data Center Products: NVIDIA A100 (Ampere) --> 8.0; V100 (Volta) --> 7.0
-
-The compute capability comprises a major revision number X and a minor revision number Y and is denoted by X.Y.
-- Devices with the same major revision number X are of the same core architecture. 
-- The minor revision number Y corresponds to an incremental improvement to the core architecture, possibly including new features.
-
-Note: **The compute capability version of a particular GPU should not be confused with the CUDA version** (for example, CUDA 7.5, CUDA 8, CUDA 9), which is the version of the CUDA software platform. The CUDA platform is used by application developers to create applications that run on many generations of GPU architectures, including future GPU architectures yet to be invented. While new versions of the CUDA platform often add native support for a new GPU architecture by supporting the compute capability version of that architecture, new versions of the CUDA platform typically also include software features that are independent of hardware generation. 
-
-The Tesla and Fermi architectures are no longer supported starting with CUDA 7.0 and CUDA 9.0, respectively.  
-
-### [CUDA envronment variables](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#env-vars)
-- CUDA_VISIBLE_DEVICES
-```python
-import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-```
+<!-- copy code button
+{% include codeHeader.html %}
+-->
 ```bash
-export CUDA_VISIBLE_DEVICES='0'
+echo "*** CUDA-capable GPU ***"
+lspci | grep -i nvidia
+echo "*** GPU compute capability ***"
+nvidia-smi --query-gpu=compute_cap --format=csv
+echo "*** CUDA cores number ***"
+nvidia-settings -q CUDACores -t
+echo "*** Linux version ***"
+uname -m && cat /etc/*release
+echo "*** gcc version ***"
+gcc --version | grep "gcc" | awk '{print $4}'
+echo "*** Kernel version ***"
+uname -r
 ```
 
-### Architecture
-Check `uname -m && cat /etc/*release`
-- x86_64: is for 64-bit Intel x86 (also referred as amd64).
-- x86: is for 32-bit Intel x86 architectures (also referred as i386 or i686).
-- armv7: is the 32-bit ARMv7 architecture.
-- aarch64: is for the 64-bit ARMv8 architecture.
-- ppc64le: is for the IBM P8 Little Endian architecture.
-
-### Installer type
-
-The same installer may be offered in 2 versions: local and network.
-- The local installer is self-contained and includes every component. It is a large file that only needs to be downloaded from the internet once and can be installed on multiple systems. It is the recommended type of installer with low-bandwidth internet connections.
-- The network installer is a small installer client that will only download the required components during the installation. It is faster to download but requires re-downloading each component with each new installation.
-
-## Preinstallation
-
-Check a `CUDA Toolkit` version requiements (replace X.Y by the cuda version https://docs.nvidia.com/cuda/archive/X.Y/cuda-installation-guide-linux/index.html#system-requirements) by seeing its [`Versioned Online Documentation`](https://developer.nvidia.com/cuda-toolkit-archive) (https://docs.nvidia.com/cuda/archive/X.Y/cuda-installation-guide-linux/index.html#pre-installation-actions) and then `Installation Guide for Linux` to check:
-- **CUDA-capable GPU**: `lspci | grep -i nvidia` (all card are listed in [cuda-gpus](https://developer.nvidia.com/cuda-gpus))
-- **A supported version of Linux**: `uname -m && cat /etc/*release` with a **gcc compiler**: `gcc --version` and toolchain. e.g.:
-  - cuda 11.0 supports for Ubuntu 20.04; Ubuntu 18.04.z (z<=4); Ubuntu 16.04 (z<=6)
-  - however cuda 11.4.0  only supports for Ubuntu 20.04.2 LTS; Ubuntu 18.04.z (z <= 5) LTS
-- **Kernel**. It is best to manually ensure the correct version of the kernel headers and development packages are installed prior to installing the CUDA Drivers, as well as whenever you change the kernel version. The version of the kernel your system `uname -r`, install `sudo apt-get install linux-headers-$(uname -r)`
+Check if CUDA Toolkit and NVIDIA driver are already installed we may think of [upgrade](#upgrade) instead:
 ```bash
-# example
-lspci | grep -i nvidia # 01:00.0 VGA compatible controller: NVIDIA Corporation Device 1f14 (rev a1)
-uname -m && cat /etc/*release # x86_64 (Architecture), Ubuntu 18.04.6 LTS (distribution)
-gcc --version # 7.5.0
-sudo apt-get install linux-headers-$(uname -r)
+echo "*** NVIDIA driver version ***"
+nvidia-smi | grep "Driver Version" | awk '{print $6}'
+echo "*** CUDA Toolkit version ***"
+nvcc --version | grep "release" | awk '{print $6}' | cut -c2-
+echo "*** cuDNN version ***"
+locate cudnn | grep "libcudnn.so." # | tail -n1 | sed -r 's/^.*\.so\.//'
 ```
 
-## Installation
+### Install
 
-Choose the right version (by matching the information system machine to cuda requiements above) to download and install. 
+In order to run a CUDA-based application, the system should have a CUDA enabled GPU and an NVIDIA display driver that is compatible with the CUDA Toolkit (**CUDA-enabled GPU + NVIDIA driver + CUDA Toolkit + (cuDNN)**) that was used to build the application itself.
 
-**CUDA Toolkit** contains **CUDA driver** and **tools needed** to create, build and run a CUDA application as well as libraries, header files, and other resources. 
+#### NVIDIA graphics driver
 
-- Download in [`CUDA Toolkit`](https://developer.nvidia.com/cuda-toolkit-archive). It has [2 different installation mechanism](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#choose-installation-method):
-  - distribution-specific packages (RPM and Deb packages) (**recommended**)
-  - distribution-independent package (runfile packages)
+Note: if you plan to install [CUDA Toolkit](#cuda-toolkit) later, you can skip this step as CUDA Toolkit includes the necessary drivers.
 
-- Check download `md5sum <file>`
+[NVIDIA driver](https://www.nvidia.com/Download/index.aspx?lang=en-us) includes the [*CUDA (driver) library*](https://docs.nvidia.com/cuda/cuda-driver-api/index.html) designed for low-level CUDA programming. When linking a CUDA-based program, we typically use the shared library named `libcuda.so`, and its corresponding header file is called `cuda.h`.
 
-- Check to install cuda https://docs.nvidia.com/cuda/archive/X.Y/cuda-installation-guide-linux/index.html#ubuntu-installation or https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#ubuntu-installation
-  - `sudo apt-get install cuda # Ubuntu`
-  - `sudo apt-get install cuda-drivers-<branch>`
+To install NVIDIA driver, we download the recommended driver `.run` file for our GPU from [NVIDIA Driver Downloads](https://www.nvidia.com/Download/index.aspx?lang=en-us). For example, if we have a GPU `GeForce RTX 2070 Mobile`, the recommended driver version is `535.86.05`.
+
+![](../../img/nvidia_driver1.png)
+
+![](../../img/nvidia_driver2.png)
+
 ```bash
-# Install cuda following
-# https://developer.nvidia.com/cuda-X-Y-download-archive
-# Ex: https://developer.nvidia.com/cuda-11-7-1-download-archive
-# https://docs.nvidia.com/cuda/cuda-quick-start-guide/index.html#ubuntu-x86_64-deb
-sudo dpkg -i dev.file
-sudo apt-key add /var/cuda.../7..
-sudo apt update
-# sudo touch /etc/apt/sources.list.d/cuda-10-2-local-10.2.89-440.33.01.list
-# sudo echo > deb file:///var/cuda-repo-10-2-local-10.2.89-440.33.01 /
-# release file found in /var/cuda...
-# apt search cuda # several cuda, so need to presise
+# e.g. fiel: NVIDIA-Linux-x86_64-535.86.05.run
+chmod +x <file.run>
+sudo ./<file.run>
+```
+Reboot your computer and verify that the NVIDIA graphics driver can be loaded:
+```bash
+nvidia-smi
+# +-----------------------------------------------------------------------------+
+# | NVIDIA-SMI 535.54.03   Driver Version: 535.54.03     CUDA Version: 12.2     |
+# |-------------------------------+----------------------+----------------------+
+# | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+# | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+# |                               |                      |               MIG M. |
+# |===============================+======================+======================|
+# |   0  NVIDIA GeForce ...  Off  | 00000000:01:00.0 Off |                  N/A |
+# | N/A   55C    P8     7W /  N/A |    396MiB /  7982MiB |     13%      Default |
+# |                               |                      |                  N/A |
+# +-------------------------------+----------------------+----------------------+
+#
+# +-----------------------------------------------------------------------------+
+# | Processes:                                                                  |
+# |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
+# |        ID   ID                                                   Usage      |
+# |=============================================================================|
+# |    0   N/A  N/A      5848      G   /usr/lib/xorg/Xorg                150MiB |
+# |    0   N/A  N/A      7386      G   /usr/bin/gnome-shell               75MiB |
+# |    0   N/A  N/A      8099      G   /usr/lib/firefox/firefox          168MiB |
+# +-----------------------------------------------------------------------------+
+```
+```bash
+sudo find /usr/ -name cuda.h
+# /usr/src/linux-headers-5.15.0-78/include/uapi/linux/cuda.h
+# /usr/src/linux-headers-5.15.0-78/include/linux/cuda.h
+# /usr/src/linux-headers-5.15.0-76/include/uapi/linux/cuda.h
+# /usr/src/linux-headers-5.15.0-76/include/linux/cuda.h
+# /usr/src/linux-headers-5.4.0-122/include/uapi/linux/cuda.h
+# /usr/src/linux-headers-5.4.0-122/include/linux/cuda.h
+# /usr/include/linux/cuda.h
+# /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda.h
+# /usr/local/lib/python3.9/site-packages/torch/include/torch/csrc/api/include/torch/cuda.h
+# /usr/local/lib/python3.9/site-packages/triton/third_party/cuda/include/cuda.h
+# /usr/local/lib/python3.9/site-packages/nvidia/cuda_runtime/include/cuda.h
+# /usr/local/cuda-11.0/targets/x86_64-linux/include/cuda.h
+
+sudo find /usr/ -name libcuda.*
+# /usr/lib/x86_64-linux-gnu/libcuda.so.1
+# /usr/lib/x86_64-linux-gnu/libcuda.so
+# /usr/lib/x86_64-linux-gnu/libcuda.so.535.54.03
+# /usr/lib/i386-linux-gnu/libcuda.so.1
+# /usr/lib/i386-linux-gnu/libcuda.so
+# /usr/lib/i386-linux-gnu/libcuda.so.535.54.03
+# /usr/local/cuda-12.2/targets/x86_64-linux/lib/stubs/libcuda.so
+# /usr/local/cuda-11.0/targets/x86_64-linux/lib/stubs/libcuda.so
+# /usr/local/cuda-11.0/doc/man/man7/libcuda.7
+# /usr/local/cuda-11.0/doc/man/man7/libcuda.so.7
+```
+It appears that the NVIDIA Driver version is `535.54.03`.
+
+#### CUDA Toolkit (CUDA)
+
+[*CUDA Runtime library*](https://docs.nvidia.com/cuda/cuda-runtime-api/index.html) is an essential component of the [CUDA Toolkit](https://docs.nvidia.com/cuda/), specifically designed for high-level CUDA programming. **When installing the NVIDIA CUDA Toolkit, the NVIDIA driver will also be automatically installed**. To link our CUDA-based program, we typically use the shared library named `libcudart.so`, and its corresponding header file is `cuda_runtime.h`.
+
+To install CUDA Toolkit, we choose the appropriate version of CUDA Toolkit to download and install from [CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive). For example, we want to choose the latest CUDA Toolkit version which is [`CUDA Toolkit 12.2.0`](https://developer.nvidia.com/cuda-downloads).
+
+![](../../img/cuda_toolkit1.png)
+
+Set up the repository and install CUDA Toolkit using the following cmds:
+```bash
+# Package pinning mechanism: set a specific version of a package to prevent automatic upgrades by the package manager.
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+# Download and add the necessary repository configuration of the CUDA Toolkit deb file for Ubuntu 22.04 (amd64 architecture) with version 12.2.0 to the APT package manager.
+wget https://developer.download.nvidia.com/compute/cuda/12.2.0/local_installers/cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-2-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo dpkg -i cuda-repo-ubuntu2204-12-2-local_12.2.0-535.54.03-1_amd64.deb
+# Update the local package list, ensuring that the system recognizes the newly added CUDA repository and its packages.
+sudo apt-get update
+# apt search cuda | grep cuda
+# sudo apt-get install -s cuda # simulate
 sudo apt-get install cuda # default, may be not the version we want
-# sudo apt-get install # cuda-10-2
+# sudo apt-get install cuda-12-2
 ```
-Add path in `~/.bashrc`
+
+We see that **installing CUDA Toolkit includes CUDA driver (`cuda-drivers`)**, tools for app creation, libraries, header files, and resources. The newer driver is overinstalled on top of the older driver. We can find the CUDA Toolkit and corresponding NVIDIA driver versions [here (table 3)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#id5).
+
+After installation, some useful environment variables are required for CUDA programming on Linux. Add the following lines to your `~/.bashrc` file:
 ```bash
-export PATH=/usr/local/cuda/bin:${PATH:+:${PATH}}
-export CUDA_PATH=/usr/local/cuda
+echo '
+# Set to the root directory of the CUDA installation
 export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
-```
-Reboot the system to load the NVIDIA drivers
-```bash
-sudo reboot
-```
-
-Check installing
-```bash
-nvcc -V # cuda toolkit version
-nvidia-smi # driver and the max cuda toolkit version may be installed using this driver but this is not the current installed cuda toolkit version (see cuda version, cuda driver)
-# reboot and retry
-# If it doesn't work, sometimes this is due to a secure boot option of your motherboard, disable it and test again
-
-# if get error: E: Failed to fetch file:/var/cuda-repo-ubuntu1604-11-2-local/
-# sudo rm /etc/apt/sources.list.d/cuda-ubuntu1604-11-2-local.list
-
-# Use the toolkit to check your CUDA capable devices
-# cuda-install-samples-8.0.sh ~/.
-# cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
-# make
-# # shutdown -r now
-# # Test cuda
-# cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery
-# ./deviceQuery
+export CUDA_PATH=/usr/local/cuda
+# Add the CUDA binary path to the existing $PATH
+export PATH=$PATH:/usr/local/cuda/bin
+# Add the CUDA library path to the existing $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+# Set it to a comma-separated list of GPU device indices
+# export CUDA_VISIBLE_DEVICES=0,1
+# Set 1 to disable
+# export CUDA_CACHE_DISABLE=1
+' >> ~/.bashrc
+source ~/.bashrc
 ```
 
-- A driver that is compatible with the CUDA Toolkit
-
-[Which GPUs are supported by the driver](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
-![](/img/gpu_driver.png)
-
-GPU (nom, HW generation, CC) --> Check driver supported (from oldest) --> e.g.: GeForce RTX 3080 Ti (Ampere) --> Ampere --> driver >= 450.36.06 + any cuda version supported (see table below to choose the driver supported cuda version)
-- driver 450.36.06 + <= cuda 11.0.1 RC
-- driver 470.82.01 + <= cuda 11.4 update 4
-
-[Table 3. CUDA Toolkit and Corresponding Driver Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#title-new-features)
-
-![](/img/CUDA_Toolkit_and_Corresponding_Driver_Versions.png)
-
-Install a driver (if needed): Download a [NVIDIA Driver Downloads](https://www.nvidia.com/Download/index.aspx?lang=en-us)
-- GPU Product
-- Operating System
+<!--
+`CUDA_DEVICE_ORDER`: controls the order in which CUDA devices are numbered.
 ```bash
-# after successful download .run file driver
-chmod +x <file>
-sudo ./<file>
+# set it to PCI_BUS_ID to use PCI bus order
+export CUDA_DEVICE_ORDER=PCI_BUS_ID
+```
+-->
+
+Some useful [environment variables](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#env-vars) used in CUDA programming on Linux:
+- `CUDA_HOME`, `CUDA_PATH`: helps various CUDA-related tools and compilers locate the necessary libraries and headers.
+- `PATH`: easily access CUDA commands like `nvcc` (CUDA compiler), `cuda-gdb`, `cuda-memcheck`, `nvprof`, `nvprune`, etc.
+- `LD_LIBRARY_PATH`: crucial for the dynamic linker to locate shared libraries required by CUDA applications at runtime. 
+- `CUDA_VISIBLE_DEVICES`: specify which GPU devices should be used by your CUDA program.
+- `CUDA_CACHE_DISABLE`: disables the CUDA cache, which can be useful for debugging and profiling purposes. 
+
+Reboot the computer and verify that the NVIDIA graphics driver can be loaded.
+
+Check if the CUDA Toolkit version has been installed successfully:
+```bash
+nvcc -V
+# nvcc: NVIDIA (R) Cuda compiler driver
+# Copyright (c) 2005-2023 NVIDIA Corporation
+# Built on Tue_Jun_13_19:16:58_PDT_2023
+# Cuda compilation tools, release 12.2, V12.2.91
+# Build cuda_12.2.r12.2/compiler.32965470_0
 ```
 
-Applications built against any of the older CUDA Toolkits always continued to function on newer drivers due to binary backward compatibility.
-
-[Do I need to uninstall my older driver first?](https://www.nvidia.com/en-gb/drivers/drivers-faq/#installing): No. It used to be the case that an uninstall was first required. Today the recommended method is to overinstall the newer driver on top of your older driver. This will allow you to maintain any current NVIDIA Control Panel settings or profiles. 
-
-- Install cuDNN libs (for deep learning-based application)
 ```bash
-# cuDNN
-# Download cuDNN corresponding to cuda version here https://developer.nvidia.com/rdp/cudnn-archive
+sudo find /usr/ -name cuda_runtime.h
+# /usr/local/cuda-12.2/targets/x86_64-linux/include/cuda_runtime.h
+# /usr/local/lib/python3.9/site-packages/nvidia/cuda_runtime/include/cuda_runtime.h
+# /usr/local/cuda-11.0/targets/x86_64-linux/include/cuda_runtime.h
+
+sudo find /usr/ -name libcudart.*
+# /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudart.so.12
+# /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudart.so.12.2.53
+# /usr/local/cuda-12.2/targets/x86_64-linux/lib/libcudart.so
+# /usr/local/lib/python3.9/site-packages/nvidia/cuda_runtime/lib/libcudart.so.11.0
+# /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcudart.so.11.0.221
+# /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcudart.so
+# /usr/local/cuda-11.0/targets/x86_64-linux/lib/libcudart.so.11.0
+# /usr/local/cuda-11.0/doc/man/man7/libcudart.7
+# /usr/local/cuda-11.0/doc/man/man7/libcudart.so.7
+```
+
+It appears that the CUDA Toolkit version is `12.2`.
+
+#### cuDNN
+
+CuDNN (CUDA Deep Neural Network Library), developed by NVIDIA, is a GPU-accelerated library specifically designed to enhance deep learning training and inference on NVIDIA GPUs.
+
+Based on [Installing cuDNN on Linux](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-linux), we download the cuDNN `.tar` file corresponding to the CUDA Toolkit version from [cuDNN Archive](https://developer.nvidia.com/rdp/cudnn-archive).
+```bash
+# cudnn-linux-x86_4-8.9.2.26_cuda12-archive.tar.xz
 cd Downloads/
-tar -zxvf cudnn-X.Y-linux-x64-v5.1.tgz 
+tar -zxvf <file.tar>
 mv cuda/ cudaX.Y
 sudo cp cudaX.Y/include/* /usr/local/cuda-X.Y/include/
 sudo cp cudaX.Y/lib64/* /usr/local/cuda-X.Y/lib64/
 sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 ```
-Check cuDNN version
+
+<!--
+Or, using `.deb` file: 
 ```bash
+# .deb file: cudnn-local-repo-ubuntu2204-8.9.2.26_1.0-1_amd64.deb
+sudo dpkg -i <file>
+cp /var/cudnn-local-repo-ubuntu2204-8.9.2.26/cudnn-local-4EB48413-keyring.gpg /usr/share/keyrings/
+sudo aptget update
+apt search libcudnn | grep cudnn
+# libcudnn8/unknown,now 8.9.2.26-1+cuda12.1 amd64
+# libcudnn8-dev/unknown,now 8.9.2.26-1+cuda12.1 amd64
+# libcudnn8-samples/unknown 8.9.2.26-1+cuda12.1 amd64
+sudo apt-get install libcudnn8
+sudo apt-get install libcudnn8-dev
+sudo apt-get install libcudnn8-samples
+```
+-->
+
+Check the installed cuDNN version if successful:
+```bash
+locate cudnn | grep "libcudnn.so."
+find /usr/ -name libcudnn*
 cat /usr/local/cuda/include/cudnn.h | grep CUDNN_MAJOR -A 2
-cat /usr/local/cuda/include/cudnn_version.h | grep 
-CUDNN_MAJOR -A 2 # for recent version
-```
-docs: [Installing cuDNN on Linux](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-linux)
-
-If existing errors:
-- The driver relies on an automatically generated `xorg.conf` file at `/etc/X11/xorg.conf`. If a custom-built `xorg.conf` file is present, this functionality will be disabled and the driver may not work. You can try removing the existing `xorg.conf` file, or adding the contents of `/etc/X11/xorg.conf.d/00-nvidia.conf` to the xorg.conf file. The xorg.conf file will most likely need manual tweaking for systems with a non-trivial GPU configuration. 
-
-## Uninstallation
-
-Uninstall a Toolkit runfile installation, a Driver runfile installation
-
-```bash
-sudo /usr/local/cuda-X.Y/bin/cuda-uninstaller
-sudo /usr/bin/nvidia-uninstall
+cat /usr/local/cuda/include/cudnn_version.h | grep CUDNN_MAJOR -A 2 # for recent version
 ```
 
-Uninstall an RPM/Deb installation (my case)
+### Upgrade
 
-```bash
-# sudo apt-get --purge remove <package_name> # Ubuntu
-sudo apt-get remove --purge nvidia*
-```
+When upgrading the CUDA Toolkit, it is essential to **ensure that the NVIDIA driver meets the minimum requirements of the targeted CUDA Toolkit version**. We can find the necessary information about the compatible driver versions for each CUDA Toolkit in the [CUDA Toolkit and Corresponding Driver Versions (table 3)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#id5).
 
-Removing CUDA Toolkit and Driver (Ubuntu and Debian)
-- remove CUDA Toolkit
-```bash
-sudo apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" 
-```
+As explained in the [CUDA Compatibility](https://docs.nvidia.com/deploy/cuda-compatibility/index.html), **CUDA upgrades are only backward compatible and not forward compatible**. This means that applications or libraries compiled with an API from a newer CUDA/ NVIDIA driver version may not function correctly if you are using an environment with an older CUDA/ NVIDIA driver version. On the other hand, applications compiled with an API from an older version will work correctly if a newer version is installed.
 
-- remove NVIDIA Drivers: 
-```bash
-sudo apt-get --purge remove "*nvidia*" && sudo apt-get autoremove
-```
+For example, consider the following example: A CUDA application compiled with CUDA `9.2` and a corresponding NVIDIA driver `396.37` may not work when executed on a system with CUDA `8.0` and NVIDIA driver version `367.48` due to the forward incompatibility. However, running an application compiled with CUDA `8.0` and NVIDIA driver `367.48` on a system with CUDA `9.2` and NVIDIA driver `396.37` will still function properly because of backward compatibility.
 
+To upgrade cuDNN, you can refer to the installation guide [here](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#upgrade).
+
+### Uninstall
+
+Removing CUDA Toolkit, NVIDIA driver and other tools:
 ```bash
-# summarizing
-sudo apt-get --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" 
+sudo apt-get --purge remove "*cuda*" 
+sudo apt-get --purge remove "*nvidia*"
+sudo apt-get --purge remove "*cublas*" "*cufft*" "*cufile*" "*curand*" "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" 
+sudo apt-get autoremove
 sudo rm -rf /var/cuda-repo-X.Y.../
 sudo rm -rf /usr/local/cuda-X.Y/ 
-sudo apt-get --purge remove "*nvidia*" && sudo apt-get autoremove
 ```
 
-## Multi cuda version on the one machine
+### Multi CUDA version on one machine
 
 Switch cuda by create a symbolic link into `/usr/local/cuda`
 ```bash
 sudo ln -s cuda-X.Y cuda
 ls -l /usr/local # see cuda folder ref to cuda-X.Y
 ```
-In `~/.bashrc`
+
+### Conclusion
+
+By the end of this guide, we will have a comprehensive understanding of NVIDIA GPUs, CUDA, and cuDNN, and you'll be well-prepared to utilize GPU-accelerated computing for various applications. We provide references to official NVIDIA documentation for further exploration.
+
+### References
+
+1. NVIDIA CUDA ToolKit X.Y Installation Guide for Linux: [docs.nvidia.com/cuda/archive/X.Y/cuda-installation-guide-linux/index.html](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html)
+2. CUDA Toolkit and corresponding driver versions (table 3): [docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#id5](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#id5)
+3. NVIDIA Driver Downloads: [nvidia.com/Download/index.aspx?lang=en-us](https://www.nvidia.com/Download/index.aspx?lang=en-us)
+4. CUDA Toolkit Archive: [developer.nvidia.com/cuda-toolkit-archive](https://developer.nvidia.com/cuda-toolkit-archive)
+5. cuDNN Archive: [developer.nvidia.com/rdp/cudnn-archive](https://developer.nvidia.com/rdp/cudnn-archive)
+6. Installing cuDNN on Linux [docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-linux](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html#install-linux)
+7. CUDA Compatibility: [docs.nvidia.com/deploy/cuda-compatibility/index.html](https://docs.nvidia.com/deploy/cuda-compatibility/index.html)
+
+<!--
+7. CUDA C++ Programming Guide: [docs.nvidia.com/cuda/cuda-c-programming-guide/index.html](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)
+
+8. [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#cuda-general-purpose-parallel-computing-architecture)
+
+9. CUDA images come in three flavors and are available through the NVIDIA public hub repository [NVIDIA/ nvidia-docker](https://github.com/NVIDIA/nvidia-docker/wiki/CUDA).
+-->
+
+### Glossary
+
+#### Compute capability
+
+<!--
+Khi chúng ta phát triển một úng dụng hoặc chạy một chương trình có sử dụng cuda, để chạy full các tính năng mà chúng ta muốn hoặc các tính năng đã được lập trình mà chúng ta muốn sử dụng, ngoài các yêu cầu bề hệ thông như phiên bản ubuntum, đối vbowis các ứng dụng cuda nó thường sẽ yêu cầu một phiên bản cuda toolkit tối thiểu, hay phiên bản pytorch, tensorRT. Vừa rồi ta đề cập đến phần mềm, tuy nhiên để các phiên bản này chạy được các tính năng mà nó muốn đôi khi nó còn yêu cầu cả về mặt phần cứng, mà đối với chương trình sử dụng cuda thì yêu cầu phần cứng ở đây là loại GPU mà chúng ta sử dụng. Và một khái niệm quan trọng ở đây để chúng ta biết được khả năng tính toán của GPU lầ compute capability. 
+-->
+
+The compute capability of a GPU (also known as its *SM version* (SM: *Streaming multiprocessors)) determines its general specifications and available features. Programs use this number at runtime to determine the available hardware features on the GPU. 
+
+We can check NVIDIA GPU's compute capability [here](https://developer.nvidia.com/cuda-gpus#compute) or by running this cmd:
 ```bash
-export PATH=/usr/local/cuda/bin:${PATH:+:${PATH}}
-export CUDA_PATH=/usr/local/cuda
-export CUDA_HOME=/usr/local/cuda
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+# older cuda toolkit may not suport this feature
+nvidia-smi --query-gpu=compute_cap --format=csv
 ```
+Compute capability of a GPU is represented by a version number `X.Y` (!= CUDA version) that indicates the supported features and instructions of the GPU hardware. GPUs sharing the same major revision number `X` in their compute capability have the same core architecture. For example, a GPU with a compute capability starting with `7.Y` is based on the Volta architecture, `8.Y` indicates the Ampere architecture, and so forth. Minor version numbers `Y` represent incremental improvements to the base architecture. For instance, Turing is assigned a compute capability of `7.5` as it is an incremental update to the Volta architecture. For deep learning-based purpose, you need to make sure that the compute capability of the GPU is at least `3.0` (Kepler architecture).
+
+Check out [Feature Support per Compute Capability (table 14)](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#features-and-technical-specifications-feature-support-per-compute-capability) and [Technical Specifications per Compute Capability (table 15)](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#features-and-technical-specifications-technical-specifications-per-compute-capability) to see if a specific GPU is support for a specific feacture or not. 
+
+List NVIDIA GPUs architecture Compute Capability: 
+- Tesla (2006), CC: `1.Y`
+- Fermi (2010), CC: `2.Y`
+- Kepler (2012), CC: `3.Y`
+- Maxwell (2014), CC: `5.Y`
+- Pascal (2016), CC: `6.Y`
+- Volta (2018), CC: `7.Y`. Turing (late 2018), based on the Volta architecture, CC: `7.5`
+- Ampere (2020), CC: `8.Y`
+- Hopper (2022), CC: `9.Y`
+
+<!--
+#### Compatibility
+
+forward compatibility and backward compatibility
+
+Choose the CUDA version that supports the feature in the implimentation code.
+
+verify if gpu hardware is supported for this feature
+
+verify compatibility vertween cuda, cuda driver, pytorch, tensorrt, cudnn, etc.
+
+The CUDA platform is used by application developers to create applications that run on many generations of GPU architectures, including future GPU architectures yet to be invented. While new versions of the CUDA platform often add native support for a new GPU architecture by supporting the compute capability version of that architecture, new versions of the CUDA platform typically also include software features that are independent of hardware generation. 
+
+The Tesla and Fermi architectures are no longer supported starting with CUDA 7.0 and CUDA 9.0, respectively.  
 
 
+Applications built against any of the older CUDA Toolkits always continued to function on newer drivers due to binary backward compatibility.
 
-## References
+[Do I need to uninstall my older driver first?](https://www.nvidia.com/en-gb/drivers/drivers-faq/#installing): No. It used to be the case that an uninstall was first required. Today the recommended method is to overinstall the newer driver on top of your older driver. This will allow you to maintain any current NVIDIA Control Panel settings or profiles. 
+-->
 
-1. [CUDA Toolkit Documentation](https://docs.nvidia.com/cuda/)
-2. [MultiCUDA: Multiple Versions of CUDA on One Machine](https://medium.com/@peterjussi/multicuda-multiple-versions-of-cuda-on-one-machine-4b6ccda6faae)
-3. [Multiple Version of CUDA Libraries On The Same Machine](https://blog.kovalevskyi.com/multiple-version-of-cuda-libraries-on-the-same-machine-b9502d50ae77)
-4. [CUDA C++ Programming Guide](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html#cuda-general-purpose-parallel-computing-architecture)
+### Appendix
 
+#### Errors
 
-## Appendix
-
-### Errors
-
-- when cuda is false CUDA unavailable when pytorch 1.3.0
-
-installed with cudatoolkit 10.1
-Ref: <https://github.com/pytorch/pytorch/issues/28321>
+When cuda is false CUDA unavailable when pytorch 1.3.0, installed with cudatoolkit 10.1 Ref: <https://github.com/pytorch/pytorch/issues/28321>
 
 ```bash
 pip install torch==1.3.1+cu100 torchvision==0.4.2+cu100 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
-- If unable to locate nvidia-410
---> system setting --> soft and update --> choose the best serveur --> retry
+If unable to locate nvidia-410 --> system setting --> soft and update --> choose the best serveur --> retry
 
-- failed call to cuInit: CUDA_ERROR_UNKNOWN
+Failed call to cuInit: `CUDA_ERROR_UNKNOWN`
 
 ```bash
 sudo apt-get install nvidia-modprobe
 reboot
 ```
 
-- if get error: E: Failed to fetch file:/var/cuda-repo-ubuntu1604-11-2-local/
+If get error: E: Failed to fetch file: `/var/cuda-repo-ubuntu1604-11-2-local/`
 
 ```bash
 sudo rm /etc/apt/sources.list.d/cuda-ubuntu1604-11-2-local.list
 ```
+If cuDNN existing errors: The driver relies on an automatically generated `xorg.conf` file at `/etc/X11/xorg.conf`. If a custom-built `xorg.conf` file is present, this functionality will be disabled and the driver may not work. You can try removing the existing `xorg.conf` file, or adding the contents of `/etc/X11/xorg.conf.d/00-nvidia.conf` to the xorg.conf file. The xorg.conf file will most likely need manual tweaking for systems with a non-trivial GPU configuration. 
 
-### Successful configs
+
+#### Successful configs
 - GeForce GTX 1080 Ti/PCIe/SSE2: python3.6, Pytorch 1.0.2, cuda 10.0, driver nvidia-410, cudnn 7.4.2
+
+
