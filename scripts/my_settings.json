@@ -1,0 +1,9 @@
+// .vscode/.settings.json
+{
+// control the location of the debug toolbar
+"debug.toolBarLocation":    "docked", 
+                            // "floating",
+                            // "hidden",
+// breakpoints can be shown in the editor's overview ruler
+"debug.showBreakpointsInOverviewRuler": true,
+}
