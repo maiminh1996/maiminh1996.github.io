@@ -37,9 +37,6 @@ In this guide, we will lead you through the essential steps to set up a deep lea
 
 Let's perform some pre-installation checks about system, GPU device, its [*compute capability*](#compute-capability) to ensure that our system meets the necessary [requirements](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#pre-installation-actions):
 
-<!-- copy code button
-{% include codeHeader.html %}
--->
 ```bash
 echo "*** CUDA-capable GPU ***"
 lspci | grep -i nvidia
