@@ -168,12 +168,12 @@ After installation, some useful environment variables are required for CUDA prog
 ```bash
 echo '
 # Set to the root directory of the CUDA installation
-export CUDA_HOME=/usr/local/cuda
-export CUDA_PATH=/usr/local/cuda
+export CUDA_HOME="$CUDA_HOME:/usr/local/cuda"
+export CUDA_PATH="$CUDA_PATH:/usr/local/cuda"
 # Add the CUDA binary path to the existing $PATH
-export PATH=$PATH:/usr/local/cuda/bin
+export PATH="$PATH:/usr/local/cuda/bin"
 # Add the CUDA library path to the existing $LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64"
 # Set it to a comma-separated list of GPU device indices
 # export CUDA_VISIBLE_DEVICES=0,1
 # Set 1 to disable
