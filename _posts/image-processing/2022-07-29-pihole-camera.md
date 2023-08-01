@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Pihole Camera"
-subtitle: "Basic Geometry and 3D Understanding (Part 1)"
+subtitle: "Basic Geometry and 3D Understanding"
 date: 2022-07-29
 author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
