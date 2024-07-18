@@ -1,9 +1,21 @@
 // .vscode/.settings.json
 {
-// control the location of the debug toolbar
-"debug.toolBarLocation":    "docked", 
-                            // "floating",
-                            // "hidden",
-// breakpoints can be shown in the editor's overview ruler
-"debug.showBreakpointsInOverviewRuler": true,
+    // control the location of the debug toolbar
+    "debug.toolBarLocation":    "docked", 
+                                // "floating",
+                                // "hidden",
+    // breakpoints can be shown in the editor's overview ruler
+    "debug.showBreakpointsInOverviewRuler": true,
+
+    // // Enable pasting files into a Markdown editor to create Markdown links.
+    // https://code.visualstudio.com/updates/v1_79#_markdowncopyfilesdestination
+    // Copy pasted media files into a Markdown editor to the workspace.
+    "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+    // Copy pasted files in documentation pages to the `src/assets/` directory.
+    "markdown.copyFiles.destination": {
+      // "/src/content/docs/**/*": "/src/assets/"
+      // "src/assets": "images/${documentBaseName}/"
+      "**/*": "../img/${documentBaseName}/"
+      // "/docs/**/*": "images/${documentBaseName}/"
+    }
 }
