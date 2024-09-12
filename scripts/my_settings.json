@@ -18,4 +18,9 @@
       "**/*": "../img/${documentBaseName}/"
       // "/docs/**/*": "images/${documentBaseName}/"
     }
+
+    /* Different workspaces with different theme colors */
+    "workbench.colorTheme": "Dracula Theme Soft"
+    // "workbench.colorTheme": "Tomorrow Night Blue"
+    // "workbench.colorTheme": "Quiet Light" // for ducumentation
 }
