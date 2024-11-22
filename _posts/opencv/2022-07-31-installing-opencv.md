@@ -153,10 +153,10 @@ python -c "import cv2; print(cv2.__file__)"
 
 --- 
 
-In summary, my bash script [opencv.sh](https://maiminh1996.github.io/scripts/opencv.sh) simplifies the installation and upgrade of OpenCV. By executing the script with the desired OpenCV version, we can build OpenCV from sources with custom configurations, enabling us to leverage the latest features and capabilities in our computer vision projects.
+In summary, my bash script [opencv.sh](https://maiminh1996.github.io/assets/scripts/opencv.sh) simplifies the installation and upgrade of OpenCV. By executing the script with the desired OpenCV version, we can build OpenCV from sources with custom configurations, enabling us to leverage the latest features and capabilities in our computer vision projects.
 ```bash
 # Download opencv.sh
-wget --no-check-certificate --content-disposition https://maiminh1996.github.io/scripts/opencv.sh -O opencv.sh
+wget --no-check-certificate --content-disposition https://maiminh1996.github.io/assets/scripts/opencv.sh -O opencv.sh
 
 # Run this script for install opencv <version>=4.6.0
 chmod +x opencv.sh
@@ -192,7 +192,7 @@ pip install numpy
 ```
 Next, upgrade to the desired version of OpenCV from [OpenCV Releases](https://github.com/opencv/opencv/releases). Use the following commands to download the upgrade script and execute it.
 ```bash
-wget --no-check-certificate --content-disposition https://maiminh1996.github.io/scripts/opencv.sh -O opencv.sh
+wget --no-check-certificate --content-disposition https://maiminh1996.github.io/assets/scripts/opencv.sh -O opencv.sh
 
 chmod +x opencv.sh
 ./opencv.sh <version>
