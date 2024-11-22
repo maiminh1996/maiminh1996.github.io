@@ -17,7 +17,7 @@
       // "src/assets": "images/${documentBaseName}/"
       "**/*": "../img/${documentBaseName}/"
       // "/docs/**/*": "images/${documentBaseName}/"
-    }
+    },
 
     /* Different workspaces with different theme colors */
     "workbench.colorTheme": "Dracula Theme Soft"
