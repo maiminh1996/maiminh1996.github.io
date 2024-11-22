@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "git Commit Message"
+title: "Git commit message"
 subtitle: "Guidelines for Creating Clear and Helpful Commit Messages in Team Collaboration"
 date: 2022-11-11
 author: "MAI Minh"

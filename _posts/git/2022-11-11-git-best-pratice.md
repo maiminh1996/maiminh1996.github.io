@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "git best pratice"
+title: "Git best pratice"
 date: 2022-11-11
 author: "MAI Minh"
 header-img: "img/"

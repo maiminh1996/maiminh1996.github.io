@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Pihole Camera"
+title: "Pihole camera"
 subtitle: "Basic Geometry and 3D Understanding"
 date: 2022-07-29
 author: "MAI Minh"

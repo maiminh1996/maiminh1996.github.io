@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Mastering Google Colab: Tips and Tricks"
+title: "Mastering google colab: tips and tricks"
 subtitle: "Boost Your Productivity and Take Full Advantage of Google Colab's Powerful Features"
 date: 2022-11-16
 author: "MAI Minh"

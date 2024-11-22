@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker inside VS Code"
+title: "Docker inside vs code"
 subtitle: "Running and Debugging Python in Docker with Visual Studio Code"
 date: 2023-03-10
 author: "MAI Minh"

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "C++ Testing with GTest"
+title: "C++ testing with GTest"
 subtitle: "A Guide to Writing Automated Tests in C++"
 date: 2023-05-11
 author: "MAI Minh"
