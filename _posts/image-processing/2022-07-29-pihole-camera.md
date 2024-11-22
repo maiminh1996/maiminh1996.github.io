@@ -27,14 +27,14 @@ toc:
 > The simplest camera model is pinhole model which decribes the mathematical relationship of the projection of points in 3d-space onto a image plane.
 
 <!-- <img src="/img/camera/pinhole_camera.png" alt="drawing" width="500"/> -->
-![](/img/camera/pinhole_camera.png)
+![](../../../assets/img/camera/pinhole_camera.png)
 
 Design a simple camera system – a system that can record an image of an object or scene in the 3D world. This camera system can be designed by placing **a barrier with a small aperture** between the 3D object and a photographic film or sensor. As shown in the image above, each point on the 3D object emits multiple rays of light outwards. Without a barrier in place, every point on the film will be influenced by light rays emitted from every point on the 3D object. Due to the barrier, **only one (or a few) of these rays of light passes through the aperture and hits the film**. Therefore, we can establish a **one-to-one mapping** between points on the 3D object and the film. The result is that the film gets exposed by an "image" of the 3D object by means of this mapping. This simple model is known as the **pinhole camera model**.
 
 ## Issues with pinhole camera
 
 <!-- <img src="/img/camera/diff_lens.png" alt="drawing" width="300"/> -->
-![](/img/camera/diff_lens.png)
+![](../../../assets/img/camera/diff_lens.png)
 
 - Larger aperture $\rightarrow$  greater number of light rays that pass through the aperture $\rightarrow$  blur
 - Smaller aperture $\rightarrow$  fewer number of light rays that pass through the aperture $\rightarrow$  darkness (+ diffraction)
@@ -46,7 +46,7 @@ $\rightarrow$ Solution: add a lens to replace the aperture! Lens: an optical ele
 > Lens: an optical element that focuses light by means of refraction
 
 <!-- <img src="/img/camera/pinhole-camara-science_orig.jpg" alt="drawing" width="500"/> -->
-![](/img/camera/pinhole-camara-science_orig.jpg)
+![](../../../assets/img/camera/pinhole-camara-science_orig.jpg)
 
 ## Thin lens model
 
@@ -57,7 +57,7 @@ Key properties (follows from Snell's law):
 - All rays passing through P are focused by the thin lens on the point $p$
 
 <!-- <img src="/img/camera/thin_len.png" alt="drawing" width="500"/> -->
-![](/img/camera/thin_len.png)
+![](../../../assets/img/camera/thin_len.png)
 
 Similar triangles
 
@@ -91,7 +91,7 @@ Project a point $P_{W}$ in world coord into a point $p(u, v)$ in pixel coord:
 > Goal: Projecting $P_{W}(X_{W}, Y_{W}, Z_{W})$ (World coord) $\rightarrow$ $P_{C}(X_{C}, Y_{C}, Z_{C})$ (Cam coord). <br>Assumption: pinhole camera model (all results also hold under thin lens model, assuming camera is focused at ∞)
 
 <!-- <img src="/img/camera/cam_world_coord.png" alt="drawing" width="500"/> -->
-![](/img/camera/cam_world_coord.png)
+![](../../../assets/img/camera/cam_world_coord.png)
 
 We have $P_{C} = t + RP_{W}$, where $t$ and $R$ are the translation vector the rotation matrix relating camera and world frames respectively. Presentation in in homogeneous coordinates:
 
@@ -118,7 +118,7 @@ $\rightarrow$ Requiements `extrinsics parameters`: translation vector $t_{(3 \ti
 > Goal: Projecting $P_{C}(X_{C}, Y_{C}, Z_{C})$ (World coord) $\rightarrow$ $p(x, y)$ (image plane)
 
 <!-- <img src="/img/camera/cam_coord_image_plane.png" alt="drawing" width="500"/> -->
-![](/img/camera/cam_coord_image_plane.png)
+![](../../../assets/img/camera/cam_coord_image_plane.png)
 
 We have:
 

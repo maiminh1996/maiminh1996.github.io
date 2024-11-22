@@ -62,9 +62,9 @@ Note: if you plan to install [CUDA Toolkit](#cuda-toolkit) later, you can skip t
 
 To install NVIDIA driver, we download the recommended driver `.run` file for our GPU from [NVIDIA Driver Downloads](https://www.nvidia.com/Download/index.aspx?lang=en-us). For example, if we have a GPU `GeForce RTX 2070 Mobile`, the recommended driver version is `535.86.05`.
 
-![](../../img/nvidia_driver1.png)
+![](../../../assets/img/nvidia_driver1.png)
 
-![](../../img/nvidia_driver2.png)
+![](../../../assets/img/nvidia_driver2.png)
 
 ```bash
 # e.g. fiel: NVIDIA-Linux-x86_64-535.86.05.run
@@ -131,7 +131,7 @@ It appears that the NVIDIA Driver version is `535.54.03`.
 
 To install CUDA Toolkit, we choose the appropriate version of CUDA Toolkit to download and install from [CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive). For example, we want to choose the latest CUDA Toolkit version which is [`CUDA Toolkit 12.2.0`](https://developer.nvidia.com/cuda-downloads).
 
-![](../../img/cuda_toolkit1.png)
+![](../../../assets/img/cuda_toolkit1.png)
 
 Set up the repository and install CUDA Toolkit using the following cmds:
 ```bash

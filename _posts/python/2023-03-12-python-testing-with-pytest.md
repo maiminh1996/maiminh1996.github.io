@@ -146,7 +146,7 @@ pytest
 ```
 `pytest` will automatically search for all the *`test_*`* functions that are defined in any `*_test.py` or `test_*.py` files in the current root directory `./`, and run them as test cases. In this case, it will find *`test_module*1.py`* and execute the *`test_add()`* function, which checks that the add function from *`module1.py`* works correctly and so on for `module2.py`.
 
-![](../../img/pytest_output.png)
+![](../../../assets/img/pytest_output.png)
 
 Pytest shows that we have 2 passed and 1 failed which comes from the function `factorial_int()` taking the -1 as input `tests/test_module2.py`. We fix this by modifing `tests/test_module2.py` 
 Pytest reports 2 passing tests and 1 failing test originating from the `factorial_int()` function in `tests/test_module2.py`, where the input -1 resulted in the failure. To address this, we make modifications to `src/module2.py`.
@@ -167,7 +167,7 @@ def factorial_int(num):
 ```
 
 Then rerun `pytest` and it will report 3 passing test and show:
-![](../../img/pytest_output2.png)
+![](../../../assets/img/pytest_output2.png)
 
 
 Note that if a test case fails or raises an exception, `pytest` might stop executing further test cases. Fixing the failures or errors might allow `pytest` to proceed with running the remaining test cases.
@@ -182,7 +182,7 @@ In <kbd>Testing</kbd> (<kbd>Activiry Bar</kbd>): <kbd>Configure Python Tests</kb
 - Show output (`Ctrl+; Ctrl+O`)
 - Set break point to debug on failure cases.
 
-![](../../img/pytest_vscode.png)
+![](../../../assets/img/pytest_vscode.png)
 
 ### Writing effective test cases
 

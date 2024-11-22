@@ -870,6 +870,19 @@ html.transition *:after {
 }
 
 // Extra Markdown style (post Customization)
+
+img {
+  max-width: 100%; /* Prevent images from overflowing */
+  margin: 0 auto; /* Center images horizontally */
+  display: block; /* Ensure margin:auto works */
+}
+
+// .post img {
+//   max-width: 100%;
+//   margin: 0 auto;
+//   display: block;
+// }
+
 .post {
   .post-meta {
     color: var(--global-text-color-light);

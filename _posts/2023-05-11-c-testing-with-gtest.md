@@ -243,7 +243,7 @@ make
 cd .. && ./results/bin/project_test 
 ```
 
-![](../img/gtest_output1.png)
+![](../../../assets/img/gtest_output1.png)
 
 
 To address this, we make modifications to `src/module1.cpp`
@@ -266,7 +266,9 @@ Build and run the tests again:
 cd build && make
 cd .. && ./results/bin/project_test 
 ```
-![](../img/gtest_output2.png)
+
+![](../../../assets/img/gtest_output2.png)
+
 
 All tests pass, it indicates that the functionality of the Arithmetic class and the factorial function (from `module2.h`) are working correctly.
 
