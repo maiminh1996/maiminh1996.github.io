@@ -86,8 +86,8 @@ pkg-config <span class="nt">--modversion</span> opencv4
 python <span class="nt">-c</span> <span class="s2">"import cv2; print(cv2.__version__)"</span>
 <span class="c"># 3.4.16</span>
 </code></pre></div></div> <p>Note that we can use the following Python command to find the location where the cv2 package is installed:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -c "import cv2; print(cv2.__file__)"
-</code></pre></div></div> <hr> <p>In summary, my bash script <a href="https://maiminh1996.github.io/scripts/opencv.sh">opencv.sh</a> simplifies the installation and upgrade of OpenCV. By executing the script with the desired OpenCV version, we can build OpenCV from sources with custom configurations, enabling us to leverage the latest features and capabilities in our computer vision projects.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download opencv.sh</span>
-wget <span class="nt">--no-check-certificate</span> <span class="nt">--content-disposition</span> https://maiminh1996.github.io/scripts/opencv.sh <span class="nt">-O</span> opencv.sh
+</code></pre></div></div> <hr> <p>In summary, my bash script <a href="https://maiminh1996.github.io/assets/scripts/opencv.sh">opencv.sh</a> simplifies the installation and upgrade of OpenCV. By executing the script with the desired OpenCV version, we can build OpenCV from sources with custom configurations, enabling us to leverage the latest features and capabilities in our computer vision projects.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download opencv.sh</span>
+wget <span class="nt">--no-check-certificate</span> <span class="nt">--content-disposition</span> https://maiminh1996.github.io/assets/scripts/opencv.sh <span class="nt">-O</span> opencv.sh
 
 <span class="c"># Run this script for install opencv &lt;version&gt;=4.6.0</span>
 <span class="nb">chmod</span> +x opencv.sh
@@ -103,7 +103,7 @@ which python
 python <span class="nt">--version</span>
 <span class="c"># Python 3.9.17</span>
 pip <span class="nb">install </span>numpy
-</code></pre></div></div> <p>Next, upgrade to the desired version of OpenCV from <a href="https://github.com/opencv/opencv/releases" rel="external nofollow noopener" target="_blank">OpenCV Releases</a>. Use the following commands to download the upgrade script and execute it.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">--no-check-certificate</span> <span class="nt">--content-disposition</span> https://maiminh1996.github.io/scripts/opencv.sh <span class="nt">-O</span> opencv.sh
+</code></pre></div></div> <p>Next, upgrade to the desired version of OpenCV from <a href="https://github.com/opencv/opencv/releases" rel="external nofollow noopener" target="_blank">OpenCV Releases</a>. Use the following commands to download the upgrade script and execute it.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget <span class="nt">--no-check-certificate</span> <span class="nt">--content-disposition</span> https://maiminh1996.github.io/assets/scripts/opencv.sh <span class="nt">-O</span> opencv.sh
 
 <span class="nb">chmod</span> +x opencv.sh
 ./opencv.sh &lt;version&gt;
