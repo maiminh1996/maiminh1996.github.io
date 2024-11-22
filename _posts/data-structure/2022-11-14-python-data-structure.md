@@ -6,11 +6,14 @@ date: 2022-11-14
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [python, data structure]
+tags: python, data structure
 catalog: true
-permalink: /distilled/data-structure/python-data-structure.html
+# permalink: /distilled/data-structure/python-data-structure.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 <!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 

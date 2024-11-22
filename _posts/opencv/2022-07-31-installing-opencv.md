@@ -4,23 +4,14 @@ title: "Installing OpenCV"
 subtitle: "Build and Run Computer Vision Applications"
 date: 2022-07-31
 author: "MAI Minh"
-header-img: "img/"
-header-style: text
-catalog: true
-tags: [installing, opencv, image processing, computer vision, python, c++, cmake]
-permalink: /distilled/opencv/installing-opencv.html
-mathjax: true
+# catalog: true
+tags: installing opencv image-processing computer-vision python c++ cmake
+categories: test-posts
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
-[Introduction](#introduction)<br>
-[Install](#install)<br>
-├─ [Build from sources](#build-from-sources)<br>
-└─ [Package manager](#package-manager)<br>
-[Upgrade](#upgrade)<br>
-[Uninstall](#uninstall)<br>
-[Conclusion](#conclusion)<br>
-[References](#references)<br>
-[Appendix](#appendix)
 
 ---
 

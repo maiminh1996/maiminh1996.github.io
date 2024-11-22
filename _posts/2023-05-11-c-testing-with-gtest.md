@@ -6,26 +6,16 @@ date: 2023-05-11
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [testing, c++]
+tags: testing c++
 catalog: true
-permalink: /distilled/c-testing-with-gtest.html
+# permalink: /distilled/c-testing-with-gtest.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
-[Introduction](#introduction)<br>
-[Why use GTest?](#why-use-gtest)<br>
-[Getting started with GTest](#getting-started-with-gtest)<br>
-├─ [Installation](#installation)<br>
-├─ [Simple GTest example](#simple-gtest-example)<br>
-├─ [Setting up GTest with CMake](#setting-up-gtest-with-cmake)<br>
-├─ [Writing unit tests](#writing-unit-tests)<br>
-&ensp;&nbsp;&nbsp;&nbsp;&nbsp;├─ [Test Fixture](#test-fixture)<br>
-&ensp;&nbsp;&nbsp;&nbsp;&nbsp;└─ [Test Cases](#test-cases)<br>
-└─ [Building and running tests](#building-and-running-tests)<br>
-[Writing effective tests with GTest](#writing-effective-tests-with-gtest)<br>
-[Conclusion](#conclusion)<br>
-[References](#references)
 
 ---
 

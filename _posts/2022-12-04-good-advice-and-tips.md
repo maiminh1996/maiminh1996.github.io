@@ -6,11 +6,14 @@ date: 2022-12-04
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [advice]
+tags: advice
 catalog: true
-permalink: /distilled/good-advice-and-tips.html
+# permalink: /distilled/good-advice-and-tips.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 <!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 

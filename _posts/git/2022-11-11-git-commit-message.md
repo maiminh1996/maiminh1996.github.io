@@ -6,11 +6,14 @@ date: 2022-11-11
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [git]
+tags: git
 catalog: true
-permalink: /distilled/git/git-commit-message.html
+# permalink: /distilled/git/git-commit-message.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
 ### Introduction

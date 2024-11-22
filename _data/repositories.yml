@@ -1,0 +1,12 @@
+github_users:
+  - maiminh1996
+
+repo_description_lines_max: 2
+
+github_repos:
+  - maiminh1996/visualisation-perception-3D
+  - maiminh1996/SLS-Fusion
+  - maiminh1996/multifogkitti
+  - maiminh1996/biblio-self-driving-cars
+  - maiminh1996/YOLOv3-tensorflow
+  - maiminh1996/sparse_lidar_kitti_datasets

@@ -6,11 +6,14 @@ date: 2023-03-10
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [docker, vs code]
+tags: docker vs-code
 catalog: true
-permalink: /distilled/ide/docker-inside-vs-code.html
+# permalink: /distilled/ide/docker-inside-vs-code.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
 ### Introduction

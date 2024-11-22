@@ -6,23 +6,15 @@ date: 2023-03-12
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [vs code, python, testing]
+tags: vs-code python testing
 catalog: true
-permalink: /distilled/python/python-testing-with-pytest.html
+# permalink: /distilled/python/python-testing-with-pytest.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
-
-[Introduction](#introduction)<br>
-[Why pytest?](#why-pytest)<br>
-[Getting started with pytest via an example](#getting-started-with-pytest-via-an-example)<br>
-├─ [pytest in command line](#pytest-in-command-line)<br>
-└─ [pytest in VS Code](#pytest-in-vs-code)<br>
-[Writing effective test cases](#writing-effective-test-cases)<br>
-[Conclusion](#conclusion)<br>
-[References](#references)<br>
-[Appendix](#appendix)<br>
-└─ [Error keywords in Python](#error-keywords-in-python)
 
 ---
 

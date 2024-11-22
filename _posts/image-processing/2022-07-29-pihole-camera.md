@@ -7,10 +7,13 @@ author: "MAI Minh"
 header-img: "img/aditya-vyas-EPmJtn_lYs0-unsplash.jpg"
 header-style: text
 catalog: true
-tags: [image processing, camera, calibration]
-permalink: /distilled/image-processing/pihole-camera.html
+tags: image-processing camera calibration
+# permalink: /distilled/image-processing/pihole-camera.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
 <!-- <b>[Completed] Last modified: </b>

@@ -6,11 +6,14 @@ date: 2022-11-16
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [python, machine learning, deep learning]
+tags: python machine-learning deep-learning
 catalog: true
-permalink: /distilled/python/google-colab.html
+# permalink: /distilled/python/google-colab.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
 <!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->

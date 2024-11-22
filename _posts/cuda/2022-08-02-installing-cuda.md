@@ -7,25 +7,13 @@ author: "MAI Minh"
 header-img: "img/"
 header-style: text
 catalog: true
-tags: [cuda, installing, deep learning]
-permalink: /distilled/cuda/installing-cuda.html
-mathjax: true
+tags: cuda installing deep learning
+# permalink: /distilled/cuda/installing-cuda.html
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 
-
-[Introduction](#introduction)<br>
-[Preinstall](#preinstall)<br>
-[Install](#install)<br>
-├─ [NVIDIA graphics driver](#nvidia-graphics-driver)<br>
-├─ [CUDA Toolkit (CUDA)](#cuda-toolkit-cuda)<br>
-└─ [cuDNN](#cudnn)<br>
-[Upgrade](#upgrade)<br>
-[Uninstall](#uninstall)<br>
-[Multi CUDA version](#multi-cuda-version-on-one-machine)<br>
-[Conclusion](#conclusion)<br>
-[References](#references)<br>
-[Glossary](#glossary)<br>
-[Appendix](#appendix)
 
 ---
 

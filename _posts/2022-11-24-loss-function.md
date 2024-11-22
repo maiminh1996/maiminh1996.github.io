@@ -6,11 +6,14 @@ date: 2022-11-24
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: [pytorch, deep learning, machine learning]
+tags: pytorch deep-learning machine-learning
 catalog: true
-permalink: /distilled/loss-function.html
+# permalink: /distilled/loss-function.html
 # katex: true
 mathjax: true
+disqus_comments: true
+toc:
+  sidebar: left
 ---
 <!-- <b>Last modified: <script>document.write( document.lastModified );</script> -->
 

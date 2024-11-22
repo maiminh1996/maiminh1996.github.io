@@ -1,1 +1,1 @@
-Welcom to my blog [https://maiminh1996.github.io/](https://maiminh1996.github.io/)!
+Welcome to my page [https://maiminh1996.github.io/](https://maiminh1996.github.io/)!
