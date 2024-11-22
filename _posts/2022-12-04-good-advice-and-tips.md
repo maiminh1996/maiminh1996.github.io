@@ -6,7 +6,8 @@ date: 2022-12-04
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: advice
+tags: 
+categories: Advice
 catalog: true
 # permalink: /distilled/good-advice-and-tips.html
 # katex: true

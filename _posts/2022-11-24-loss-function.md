@@ -6,7 +6,8 @@ date: 2022-11-24
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: pytorch deep-learning machine-learning
+tags: pytorch
+categories: Deep-Learning Machine-Learning
 catalog: true
 # permalink: /distilled/loss-function.html
 # katex: true

@@ -6,7 +6,8 @@ date: 2022-11-14
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: python, data structure
+tags: python
+categories: Data-Structure
 catalog: true
 # permalink: /distilled/data-structure/python-data-structure.html
 # katex: true

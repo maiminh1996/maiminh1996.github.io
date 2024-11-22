@@ -2,8 +2,7 @@
 layout: post
 title: "Enabling image copy-paste in markdown"
 date: 2024-11-22 13:14:00
-tags: markdown
-categories: tricks
+tags: markdown vs-code tricks
 featured: false
 disqus_comments: true
 toc:

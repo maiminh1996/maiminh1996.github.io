@@ -6,7 +6,8 @@ date: 2022-11-21
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: pytorch deep-learning
+tags: pytorch
+categories: Deep-Learning
 catalog: true
 # permalink: /distilled/pytorch/disable-gradient-computation.html
 # katex: true

@@ -5,7 +5,8 @@ subtitle: "Build and Run Computer Vision Applications"
 date: 2022-07-31
 author: "MAI Minh"
 # catalog: true
-tags: installing opencv image-processing computer-vision python c++ cmake
+tags: installing opencv python c++ cmake
+categories: Image-Processing Computer-Vision
 categories: test-posts
 disqus_comments: true
 toc:

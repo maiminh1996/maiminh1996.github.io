@@ -6,7 +6,8 @@ date: 2022-11-16
 author: "MAI Minh"
 header-img: "img/"
 header-style: text
-tags: python machine-learning deep-learning
+tags: python
+categories: Machine-Learning Deep-Learning
 catalog: true
 # permalink: /distilled/python/google-colab.html
 # katex: true

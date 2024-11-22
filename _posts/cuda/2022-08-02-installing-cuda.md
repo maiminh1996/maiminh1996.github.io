@@ -7,7 +7,8 @@ author: "MAI Minh"
 header-img: "img/"
 header-style: text
 catalog: true
-tags: cuda installing deep learning
+tags: cuda installing 
+categories: Deep-Learning
 # permalink: /distilled/cuda/installing-cuda.html
 disqus_comments: true
 toc:
