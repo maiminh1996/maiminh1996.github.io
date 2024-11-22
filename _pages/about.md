@@ -6,7 +6,7 @@ subtitle: AI research engineer at Valeo
 
 profile:
   align: right
-  image: avatar.jpeg
+  image: avatar2.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>Valeo Mobility Tech Center</p>
