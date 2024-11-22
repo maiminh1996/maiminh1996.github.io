@@ -1,0 +1,7 @@
+@misc{mai_my_research_sparse_dataset_2022,
+    author = {Mai, Nguyen Anh Minh and Duthon, Pierre and Houssam SALMANE, Pascal and Khoudour, Louahdi and Crouzil, Alain and A. Velastin, Sergio},
+    month = {8},
+    title = ,
+    url = {https://github.com/maiminh1996/sparse_lidar_kitti_datasets},
+    year = {2022}
+}

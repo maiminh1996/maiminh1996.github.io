@@ -1,0 +1,13 @@
+@Article{s23063223,
+AUTHOR = {Salmane, Pascal Housam and Rivera Velázquez, Josué Manuel and Khoudour, Louahdi and Mai, Nguyen Anh Minh and Duthon, Pierre and Crouzil, Alain and Pierre, Guillaume Saint and Velastin, Sergio A.},
+TITLE = {3D Object Detection for Self-Driving Cars Using Video and LiDAR: An Ablation Study},
+JOURNAL = {Sensors},
+VOLUME = {23},
+YEAR = {2023},
+NUMBER = {6},
+ARTICLE-NUMBER = {3223},
+URL = {https://www.mdpi.com/1424-8220/23/6/3223},
+ISSN = {1424-8220},
+ABSTRACT = {},
+DOI = {10.3390/s23063223}
+}
