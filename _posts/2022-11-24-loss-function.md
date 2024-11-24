@@ -30,9 +30,9 @@ Notes:
 > [classification] It is useful to train a classification problem with C classes.
 
 `nn.NLLLoss(input, target)` == `F.nll_loss()`
-- input: (N, C), or $(N, C, d_{1}, d_{2}, ..., d_K)$ with $K \geq 1$ in the case of K-dimensional loss.
-- target: (N), or $(N, d_{1}, d_{2}, ..., d_{K})$ with $K \geq 1$ in the case of K-dimensional loss.
-- output: scalar. If reduction is none, then the same size as the target: (N), or $(N, d_{1}, d_{2}, ..., d_{K})$ with $K \geq 1$ in the case of K-dimensional loss.
+- input: (N, C), or $$(N, C, d_{1}, d_{2}, ..., d_K)$$ with $$K \geq 1$$ in the case of K-dimensional loss.
+- target: (N), or $$(N, d_{1}, d_{2}, ..., d_{K})$$ with $$K \geq 1$$ in the case of K-dimensional loss.
+- output: scalar. If reduction is none, then the same size as the target: (N), or $$(N, d_{1}, d_{2}, ..., d_{K})$$ with $$K \geq 1$$ in the case of K-dimensional loss.
 
 ```python
 N, C = 3, 5
@@ -85,14 +85,14 @@ $$
 L_{CE} = - \sum_{i=1}^{n} t_{i}log(p_{i}),
 $$
 
-where, $t_{i}$ is the truth label and $p_{i}$ is the softmax probability for $i^{th}$ class.
+where, $$t_{i}$$ is the truth label and $$p_{i}$$ is the softmax probability for $$i^{th}$$ class.
 
 
 
 `nn.CrossEntropyLoss(input, target)`<br>== `F.cross_entropy()` == `F.nll_loss(F.log_softmax(input, 1), target)`. <span style="color:red">In Pytorch, these criterion combines `log_softmax` and `nll_loss` in a single function</span>.
 - input: (N, C), (N, C, H, W)
-- target: (N) where each value is $0 \leq \text{targets}[i] \leq C-1$, or $(N, d_1, d_2, ..., d_K)$ where $K \geq 1$ for K-dimensional loss. 
-- output: scalar. If reduction is none, then the same size as the target (N), or $(N, d_1, d_2, ..., d_K)$ with $K \geq 1$ in the case of K-dimensional loss.
+- target: (N) where each value is $$0 \leq \text{targets}[i] \leq C-1$$, or $$(N, d_1, d_2, ..., d_K)$$ where $$K \geq 1$$ for K-dimensional loss. 
+- output: scalar. If reduction is none, then the same size as the target (N), or $$(N, d_1, d_2, ..., d_K)$$ with $$K \geq 1$$ in the case of K-dimensional loss.
 
 ```python
 N, C = 16, 5
@@ -139,13 +139,13 @@ loss = nn.BCEWithLogitsLoss(input, target)
 
 > [regression]
 
-Function that uses a [squared term](#mse-loss) if the absolute element-wise error falls below $\beta$ (1 by default) and an [L1 term](#mae-loss) otherwise. It is less sensitive to outliers than the [MSELoss](#mse-loss) and in some cases prevents exploding gradients (e.g. see Fast R-CNN paper by Ross Girshick).
+Function that uses a [squared term](#mse-loss) if the absolute element-wise error falls below $$\beta$$ (1 by default) and an [L1 term](#mae-loss) otherwise. It is less sensitive to outliers than the [MSELoss](#mse-loss) and in some cases prevents exploding gradients (e.g. see Fast R-CNN paper by Ross Girshick).
 
 $$
 L_{Smooth\ L1} = \frac{1}{n} \sum_{i} z_{i}
 $$
 
-where $z_{i}$ is given by:
+where $$z_{i}$$ is given by:
 
 $$
 z_{i} =
@@ -155,7 +155,7 @@ z_{i} =
 \end{cases}
 $$
 
-$x$ and $y$ arbitrary shapes with a total of $n$ elements each the sum operation still operates over all the elements, and divides by $n$.
+$$x$$ and $$y$$ arbitrary shapes with a total of $$n$$ elements each the sum operation still operates over all the elements, and divides by $$n$$.
 
 
 `nn.SmoothL1Loss(input, target)` == `F.smooth_l1_loss()`
